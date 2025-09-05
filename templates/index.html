@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science Olympiad CodeBusters 2025 Practice - Cipher Tutorials & Training | Free</title>
+    <meta name="description" content="Free Science Olympiad CodeBusters practice for 2025 season! Master Caesar, Baconian, Vigenère, Morse code + more ciphers. Interactive tutorials, practice exercises, competition tips for Division B/C students.">
+    <meta name="keywords" content="science olympiad 2025, codebusters, cipher practice, cryptanalysis, baconian cipher, caesar cipher, morse code, middle school competition, division b, division c, aristocrat cipher, patristocrat, vigenere cipher, atbash cipher, checkerboard cipher 2025, scioly practice">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Science Olympiad Code Breaker Practice")
+    <link rel="canonical" href="https://snr0-154605.uc.r.appspot.com{{ request.path }}">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://snr0-154605.uc.r.appspot.com{{ request.path }}">
+    <meta property="og:title" content="Science Olympiad CodeBusters 2025 Practice - Free Cipher Training">
+    <meta property="og:description" content="🏆 Free Science Olympiad CodeBusters practice for 2025 season! Interactive Caesar, Baconian, Vigenère cipher tutorials. Perfect for Division B/C competition prep.">
+    <meta property="og:image" content="https://snr0-154605.uc.r.appspot.com/static/og-image.jpg">
+    <meta property="og:site_name" content="Science Olympiad CodeBusters Practice">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://snr0-154605.uc.r.appspot.com{{ request.path }}">
+    <meta property="twitter:title" content="Science Olympiad CodeBusters 2025 Practice - Free Cipher Training">
+    <meta property="twitter:description" content="🏆 Free Science Olympiad CodeBusters practice for 2025 season! Interactive Caesar, Baconian, Vigenère cipher tutorials. Perfect for Division B/C competition prep.">
+    <meta property="twitter:image" content="https://snr0-154605.uc.r.appspot.com/static/og-image.jpg">
+    <meta name="twitter:creator" content="@SciolyPractice">
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Science Olympiad CodeBusters Practice",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Web Browser",
+      "description": "Free interactive practice tool for Science Olympiad CodeBusters competition. Learn Caesar, Baconian, Vigenère, Morse code and more ciphers with tutorials and exercises.",
+      "url": "https://snr0-154605.uc.r.appspot.com",
+      "creator": {
+        "@type": "Organization",
+        "name": "Science Olympiad Code Breaker Practice"
+      },
+      "educationalLevel": "Middle School",
+      "educationalUse": "Practice",
+      "learningResourceType": "Interactive Tool",
+      "audience": {
+        "@type": "EducationalAudience",
+        "educationalRole": "Student"
+      },
+      "keywords": "science olympiad, codebusters, cipher practice, cryptanalysis, middle school competition",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Caesar Cipher Practice",
+        "Baconian Cipher Tutorial", 
+        "Morse Code Training",
+        "Vigenère Cipher Practice",
+        "Interactive Tutorials",
+        "Competition Tips",
+        "Progress Tracking"
+      ]
+    }
+    </script>
+    
+    <!-- Course/Tutorial Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Cipher 101: Science Olympiad CodeBusters Training",
+      "description": "Comprehensive cipher tutorials for Science Olympiad CodeBusters competition including Caesar cipher, Baconian cipher, and more advanced cryptography techniques.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Science Olympiad Code Breaker Practice"
+      },
+      "educationalLevel": "Middle School",
+      "courseMode": "online",
+      "hasCourseInstance": [
+        {
+          "@type": "CourseInstance",
+          "courseModeCode": "online",
+          "courseWorkload": "PT15M",
+          "name": "Caesar Cipher Tutorial"
+        },
+        {
+          "@type": "CourseInstance", 
+          "courseModeCode": "online",
+          "courseWorkload": "PT20M",
+          "name": "Baconian Cipher Tutorial"
+        }
+      ],
+      "teaches": [
+        "Caesar cipher encoding and decoding",
+        "Baconian cipher steganography", 
+        "Cryptanalysis techniques",
+        "Competition strategies",
+        "Pattern recognition in ciphers"
+      ]
+    }
+    </script>
+    
+    <!-- FAQ Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Science Olympiad CodeBusters?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "CodeBusters is a Science Olympiad event where teams cryptanalyze and decode encrypted messages using various cipher techniques including Caesar, Baconian, Vigenère, and Morse code."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What ciphers are used in CodeBusters 2025?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The 2025 season includes Caesar, Atbash, Affine, Vigenère, Baconian, Hill, Running-Key, RSA ciphers, and the new Checkerboard Cipher. Also aristocrats and patristocrats."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I practice for Science Olympiad CodeBusters?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use our free interactive practice tool with step-by-step tutorials, practice exercises, and competition tips. Start with Caesar cipher and progress to advanced techniques."
+          }
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='favicon.svg') }}">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="header-left">
+                    <h1><i class="fas fa-unlock-alt"></i> Science Olympiad CodeBusters 2025 Practice</h1>
+                    <p>Free interactive cipher practice for Science Olympiad CodeBusters competition! Master Caesar, Baconian, Vigenère, Morse code, and cryptanalysis techniques. Perfect for Division B/C students preparing for the 2025-2026 season.</p>
+                </div>
+                <div class="header-right">
+                    {% if current_user.is_authenticated %}
+                        <div class="user-profile">
+                            <img src="{{ current_user.picture }}" alt="Profile" class="profile-pic">
+                            <span class="user-name">{{ current_user.name }}</span>
+                            <div class="user-menu">
+                                <a href="{{ url_for('dashboard') }}" class="menu-item">
+                                    <i class="fas fa-chart-line"></i> Dashboard
+                                </a>
+                                <a href="{{ url_for('logout') }}" class="menu-item">
+                                    <i class="fas fa-sign-out-alt"></i> Logout
+                                </a>
+                            </div>
+                        </div>
+                    {% else %}
+                        <a href="{{ url_for('login') }}" class="login-btn">
+                            <i class="fab fa-google"></i> Sign in with Google
+                        </a>
+                        {% if show_local_login %}
+                        <a href="{{ url_for('local_login') }}" class="login-btn local-login-btn">
+                            <i class="fas fa-user"></i> Local Test Login
+                        </a>
+                        {% endif %}
+                    {% endif %}
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content" role="main">
+            <!-- Tab Navigation -->
+            <nav class="tab-navigation" role="tablist" aria-label="Main navigation">
+                <button class="tab-btn active" data-tab="practice" role="tab" aria-selected="true" aria-controls="practice-tab">
+                    <i class="fas fa-gamepad"></i> Practice
+                </button>
+                <button class="tab-btn" data-tab="tutorials" role="tab" aria-selected="false" aria-controls="tutorials-tab">
+                    <i class="fas fa-graduation-cap"></i> Cipher 101
+                </button>
+                <button class="tab-btn" data-tab="engineering" role="tab" aria-selected="false" aria-controls="engineering-tab">
+                    <i class="fas fa-cogs"></i> Engineering
+                </button>
+                <button class="tab-btn" data-tab="faq" role="tab" aria-selected="false" aria-controls="faq-tab">
+                    <i class="fas fa-question-circle"></i> FAQ
+                </button>
+            </nav>
+
+            <!-- Practice Tab Content -->
+            <section class="tab-content active" id="practice-tab" role="tabpanel" aria-labelledby="practice-tab-label">
+                <div class="cipher-selection">
+                <h2 id="practice-tab-label">Science Olympiad CodeBusters 2025 Cipher Practice</h2>
+                <p class="cipher-intro">Practice all cipher types from the official Science Olympiad CodeBusters 2025-2026 season rules. Interactive tools for Division B/C competition preparation:</p>
+                <div class="cipher-grid">
+                    <button class="cipher-btn active" data-cipher="caesar">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span>Caesar Cipher</span>
+                        <small>Shift cipher - perfect for beginners</small>
+                    </button>
+                    <button class="cipher-btn" data-cipher="atbash">
+                        <i class="fas fa-arrows-alt-h"></i>
+                        <span>Atbash Cipher</span>
+                        <small>Reverse alphabet substitution</small>
+                    </button>
+                    <button class="cipher-btn" data-cipher="keyword">
+                        <i class="fas fa-key"></i>
+                        <span>Keyword Cipher</span>
+                        <small>Substitution with keyword alphabet</small>
+                    </button>
+                    <button class="cipher-btn" data-cipher="vigenere">
+                        <i class="fas fa-table"></i>
+                        <span>Vigenère Cipher</span>
+                        <small>Polyalphabetic keyword encryption</small>
+                    </button>
+                    <button class="cipher-btn" data-cipher="morse">
+                        <i class="fas fa-dot-circle"></i>
+                        <span>Morse Code</span>
+                        <small>Dots and dashes communication</small>
+                    </button>
+                    <button class="cipher-btn" data-cipher="binary">
+                        <i class="fas fa-code"></i>
+                        <span>Binary Code</span>
+                        <small>8-bit ASCII computer encoding</small>
+                    </button>
+                    <button class="cipher-btn" data-cipher="aristocrats">
+                        <i class="fas fa-user-secret"></i>
+                        <span>Aristocrats</span>
+                        <small>Monoalphabetic substitution puzzles</small>
+                    </button>
+                    <button class="cipher-btn" data-cipher="affine">
+                        <i class="fas fa-divide"></i>
+                        <span>Affine Cipher</span>
+                        <small>Mathematical linear transformation</small>
+                    </button>
+                    <button class="cipher-btn" data-cipher="baconian">
+                        <i class="fas fa-file-code"></i>
+                        <span>Baconian Cipher</span>
+                        <small>Binary steganographic encoding</small>
+                    </button>
+                    <button class="cipher-btn" data-cipher="polybius">
+                        <i class="fas fa-th"></i>
+                        <span>Polybius Square</span>
+                        <small>Grid-based coordinate cipher</small>
+                    </button>
+                </div>
+            </div>
+
+            <div class="practice-area">
+                <div class="cipher-info">
+                    <h3 id="cipher-name">Caesar Cipher</h3>
+                    <p id="cipher-description">Shift each letter by a fixed number of positions in the alphabet.</p>
+                </div>
+
+                <div class="cipher-controls">
+                    <div class="control-group">
+                        <label for="difficulty">Difficulty:</label>
+                        <select id="difficulty">
+                            <option value="easy">Easy (3-5 letters)</option>
+                            <option value="medium" selected>Medium (6-10 letters)</option>
+                            <option value="hard">Hard (11-15 letters)</option>
+                            <option value="expert">Expert (Full sentences)</option>
+                        </select>
+                    </div>
+                    <button id="generate-btn" class="generate-btn">
+                        <i class="fas fa-random"></i> Generate New Code
+                    </button>
+                </div>
+
+                <div class="code-display">
+                    <h4>Encoded Message:</h4>
+                    <div class="encoded-text" id="encoded-text">
+                        Click "Generate New Code" to start!
+                    </div>
+                </div>
+
+                <div class="decode-section">
+                    <h4>Your Decoded Answer:</h4>
+                    <div class="input-group">
+                        <input type="text" id="decoded-input" placeholder="Enter your decoded text here..." maxlength="50">
+                        <button id="check-btn" class="check-btn">
+                            <i class="fas fa-check"></i> Check Answer
+                        </button>
+                    </div>
+                    <div class="action-btn-group">
+                        <button id="get-hint-btn" class="action-btn hint">
+                            <i class="fas fa-lightbulb"></i> Get Hint
+                        </button>
+                        <button id="cipher-intro-btn" class="action-btn info">
+                            <i class="fas fa-info-circle"></i> About this Cipher
+                        </button>
+                        <button id="freq-letters-btn" class="action-btn info">
+                            <i class="fas fa-font"></i> Most Frequent Letters
+                        </button>
+                    </div>
+                </div>
+
+                <div class="result" id="result">
+                    <!-- Result will be displayed here -->
+                </div>
+
+                <div class="hint-section">
+                    <div id="hint-text" class="hint-text"></div>
+                </div>
+            </div>
+
+            <div class="stats">
+                <div class="stat-card">
+                    <i class="fas fa-trophy"></i>
+                    <div class="stat-info">
+                        <span class="stat-number" id="correct-count">0</span>
+                        <span class="stat-label">Correct</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-times-circle"></i>
+                    <div class="stat-info">
+                        <span class="stat-number" id="incorrect-count">0</span>
+                        <span class="stat-label">Incorrect</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-percentage"></i>
+                    <div class="stat-info">
+                        <span class="stat-number" id="accuracy">0%</span>
+                        <span class="stat-label">Accuracy</span>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <!-- Tutorials Tab Content -->
+            <div class="tab-content" id="tutorials-tab">
+                <div class="tutorials-section">
+                    <h2><i class="fas fa-graduation-cap"></i> Cipher 101 Tutorials</h2>
+                    <p class="tutorials-intro">Learn the fundamentals of each cipher with step-by-step tutorials designed for Science Olympiad competition success.</p>
+                    
+                    <div class="tutorial-nav">
+                        <button class="tutorial-btn active" data-tutorial="caesar">
+                            <i class="fas fa-exchange-alt"></i>
+                            <span>Caesar Cipher</span>
+                            <small>Available Now</small>
+                        </button>
+                        <button class="tutorial-btn active" data-tutorial="baconian">
+                            <i class="fas fa-file-code"></i>
+                            <span>Baconian Cipher</span>
+                            <small>Available Now</small>
+                        </button>
+                        <button class="tutorial-btn disabled" data-tutorial="atbash">
+                            <i class="fas fa-arrows-alt-h"></i>
+                            <span>Atbash Cipher</span>
+                            <small>Coming Soon</small>
+                        </button>
+                        <button class="tutorial-btn disabled" data-tutorial="keyword">
+                            <i class="fas fa-key"></i>
+                            <span>Keyword Cipher</span>
+                            <small>Coming Soon</small>
+                        </button>
+                        <button class="tutorial-btn active" data-tutorial="vigenere">
+                            <i class="fas fa-table"></i>
+                            <span>Vigenère Cipher</span>
+                            <small>Available Now</small>
+                        </button>
+                        <button class="tutorial-btn disabled" data-tutorial="morse">
+                            <i class="fas fa-dot-circle"></i>
+                            <span>Morse Code</span>
+                            <small>Coming Soon</small>
+                        </button>
+                        <button class="tutorial-btn active" data-tutorial="binary">
+                            <i class="fas fa-calculator"></i>
+                            <span>Binary Code</span>
+                            <small>Available Now</small>
+                        </button>
+                    </div>
+
+                    <div class="tutorial-content">
+                        <!-- Caesar Cipher Tutorial -->
+                        <div class="tutorial-lesson active" id="caesar-tutorial">
+                            <div class="lesson-header">
+                                <h3><i class="fas fa-exchange-alt"></i> Caesar Cipher Tutorial</h3>
+                                <div class="lesson-meta">
+                                    <span class="difficulty beginner">Beginner</span>
+                                    <span class="duration">15 minutes</span>
+                                </div>
+                            </div>
+
+                            <div class="lesson-content">
+                                <section class="lesson-section">
+                                    <h4>What is the Caesar Cipher?</h4>
+                                    <p>The Caesar cipher is one of the simplest and most famous encryption techniques in history. Named after Julius Caesar, who used it to protect his military communications, this cipher shifts each letter in the message by a fixed number of positions in the alphabet.</p>
+                                    
+                                    <div class="example-box">
+                                        <h5>Historical Note</h5>
+                                        <p>Julius Caesar used a shift of 3 positions (A→D, B→E, C→F) to encode his messages. This made his communications secure from enemies who couldn't read Latin, let alone decoded messages!</p>
+                                    </div>
+                                </section>
+
+                                <section class="lesson-section">
+                                    <h4>How Does It Work?</h4>
+                                    <p>The Caesar cipher uses a simple substitution method:</p>
+                                    <ol>
+                                        <li><strong>Choose a shift value</strong> (like 3, 5, or 13)</li>
+                                        <li><strong>Move each letter</strong> forward in the alphabet by that amount</li>
+                                        <li><strong>Wrap around</strong> - if you go past Z, start over at A</li>
+                                    </ol>
+
+                                    <div class="cipher-demo">
+                                        <h5>Example with Shift 3:</h5>
+                                        <div class="alphabet-demo">
+                                            <div class="alphabet-row">
+                                                <span class="label">Original:</span>
+                                                <span class="letters">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</span>
+                                            </div>
+                                            <div class="alphabet-row">
+                                                <span class="label">Shifted:</span>
+                                                <span class="letters">D E F G H I J K L M N O P Q R S T U V W X Y Z A B C</span>
+                                            </div>
+                                        </div>
+                                        <div class="word-example">
+                                            <p><strong>HELLO</strong> becomes <strong>KHOOR</strong></p>
+                                            <p>H→K, E→H, L→O, L→O, O→R</p>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section class="lesson-section">
+                                    <h4>Decoding Strategy</h4>
+                                    <p>To decode a Caesar cipher, you need to find the shift value:</p>
+                                    
+                                    <div class="strategy-steps">
+                                        <div class="step">
+                                            <div class="step-number">1</div>
+                                            <div class="step-content">
+                                                <h5>Try Common Shifts</h5>
+                                                <p>Start with popular shifts like 3, 13 (ROT13), or 25 (reverse of 1)</p>
+                                            </div>
+                                        </div>
+                                        <div class="step">
+                                            <div class="step-number">2</div>
+                                            <div class="step-content">
+                                                <h5>Look for Words</h5>
+                                                <p>Try each shift and see if you can spot real English words</p>
+                                            </div>
+                                        </div>
+                                        <div class="step">
+                                            <div class="step-number">3</div>
+                                            <div class="step-content">
+                                                <h5>Use Frequency Analysis</h5>
+                                                <p>E is the most common letter in English - look for the most frequent letter in the cipher</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section class="lesson-section">
+                                    <h4>Practice Time!</h4>
+                                    <p>Try decoding this Caesar cipher. The shift is 5:</p>
+                                    
+                                    <div class="practice-box">
+                                        <div class="cipher-text">HTSQI</div>
+                                        <div class="practice-controls">
+                                            <input type="text" id="practice-input" placeholder="Enter your answer..." maxlength="10">
+                                            <button id="check-practice" class="practice-btn">Check Answer</button>
+                                        </div>
+                                        <div id="practice-result" class="practice-result"></div>
+                                        <div class="practice-hint" style="display: none;">
+                                            <p><strong>Hint:</strong> Remember to shift each letter back by 5 positions. H becomes C, T becomes O...</p>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section class="lesson-section">
+                                    <h4>Competition Tips</h4>
+                                    <div class="tips-grid">
+                                        <div class="tip">
+                                            <i class="fas fa-clock"></i>
+                                            <h5>Speed Strategy</h5>
+                                            <p>Always try ROT13 (shift 13) first - it's very common in competitions</p>
+                                        </div>
+                                        <div class="tip">
+                                            <i class="fas fa-eye"></i>
+                                            <h5>Pattern Recognition</h5>
+                                            <p>Look for single letters (A, I) and common words (THE, AND, OF)</p>
+                                        </div>
+                                        <div class="tip">
+                                            <i class="fas fa-calculator"></i>
+                                            <h5>Quick Math</h5>
+                                            <p>If A→D, that's a shift of 3. Use this to find the pattern quickly</p>
+                                        </div>
+                                        <div class="tip">
+                                            <i class="fas fa-pencil-alt"></i>
+                                            <h5>Work Smart</h5>
+                                            <p>Write out the shifted alphabet if you have time - it prevents mistakes</p>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section class="lesson-section">
+                                    <h4>Ready to Practice?</h4>
+                                    <p>Now that you understand the Caesar cipher, head to the Practice tab to test your skills with various difficulty levels!</p>
+                                    <button class="start-practice-btn" onclick="switchTab('practice')">
+                                        <i class="fas fa-play"></i> Start Practicing Caesar Cipher
+                                    </button>
+                                </section>
+                            </div>
+                        </div>
+
+                        <!-- Baconian Cipher Tutorial -->
+                        <div class="tutorial-lesson" id="baconian-tutorial">
+                            <div class="lesson-header">
+                                <h3><i class="fas fa-file-code"></i> Baconian Cipher Tutorial</h3>
+                                <div class="lesson-meta">
+                                    <span class="difficulty beginner">Beginner</span>
+                                    <span class="duration">20 minutes</span>
+                                </div>
+                            </div>
+
+                            <div class="lesson-content">
+                                <section class="lesson-section">
+                                    <h4>What is the Baconian Cipher?</h4>
+                                    <p>The Baconian cipher is a steganographic cipher created by Sir Francis Bacon in the late 1500s. It's called a "binary" cipher because it uses only two symbols (traditionally A and B) to represent all letters of the alphabet. Each letter is encoded as a unique 5-character sequence.</p>
+                                    
+                                    <div class="example-box">
+                                        <h5>Historical Note</h5>
+                                        <p>Francis Bacon designed this cipher for hiding messages within other texts. Some scholars even believe Shakespeare's works contain hidden messages using this method! The cipher was revolutionary because it could hide secret messages in plain sight.</p>
+                                    </div>
+                                </section>
+
+                                <section class="lesson-section">
+                                    <h4>How Does It Work?</h4>
+                                    <p>The Baconian cipher assigns each letter a unique 5-character code using only A's and B's:</p>
+                                    
+                                    <div class="cipher-demo">
+                                        <h5>The Baconian Alphabet:</h5>
+                                        <div class="baconian-table">
+                                            <div class="baconian-row">
+                                                <span class="letter">A = AAAAA</span>
+                                                <span class="letter">B = AAAAB</span>
+                                                <span class="letter">C = AAABA</span>
+                                                <span class="letter">D = AAABB</span>
+                                                <span class="letter">E = AABAA</span>
+                                            </div>
+                                            <div class="baconian-row">
+                                                <span class="letter">F = AABAB</span>
+                                                <span class="letter">G = AABBA</span>
+                                                <span class="letter">H = AABBB</span>
+                                                <span class="letter">I = ABAAA</span>
+                                                <span class="letter">J = ABAAB</span>
+                                            </div>
+                                            <div class="baconian-row">
+                                                <span class="letter">K = ABABA</span>
+                                                <span class="letter">L = ABABB</span>
+                                                <span class="letter">M = ABBAA</span>
+                                                <span class="letter">N = ABBAB</span>
+                                                <span class="letter">O = ABBBA</span>
+                                            </div>
+                                            <div class="baconian-row">
+                                                <span class="letter">P = ABBBB</span>
+                                                <span class="letter">Q = BAAAA</span>
+                                                <span class="letter">R = BAAAB</span>
+                                                <span class="letter">S = BAABA</span>
+                                                <span class="letter">T = BAABB</span>
+                                            </div>
+                                            <div class="baconian-row">
+                                                <span class="letter">U = BABAA</span>
+                                                <span class="letter">V = BABAB</span>
+                                                <span class="letter">W = BABBA</span>
+                                                <span class="letter">X = BABBB</span>
+                                                <span class="letter">Y = BBAAA</span>
+                                                <span class="letter">Z = BBAAB</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="word-example">
+                                            <p><strong>Example: "HI"</strong></p>
+                                            <p>H = AABBB, I = ABAAA</p>
+                                            <p><strong>Encoded:</strong> AABBB ABAAA</p>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section class="lesson-section">
+                                    <h4>Science Olympiad Competition Tips</h4>
+                                    <p>In Science Olympiad CodeBusters, Baconian ciphers often have these variations:</p>
+                                    
+                                    <div class="strategy-steps">
+                                        <div class="step">
+                                            <div class="step-number">1</div>
+                                            <div class="step-content">
+                                                <h5>Different Symbols</h5>
+                                                <p>Instead of A and B, you might see 0/1, •/-, or any two distinct symbols. Look for patterns!</p>
+                                            </div>
+                                        </div>
+                                        <div class="step">
+                                            <div class="step-number">2</div>
+                                            <div class="step-content">
+                                                <h5>Group by 5</h5>
+                                                <p>Always group the symbols into sets of 5. Each group represents one letter.</p>
+                                            </div>
+                                        </div>
+                                        <div class="step">
+                                            <div class="step-number">3</div>
+                                            <div class="step-content">
+                                                <h5>Pattern Recognition</h5>
+                                                <p>If you see "XXXXX", it likely represents 'A' since AAAAA = A, but BBBBB doesn't exist.</p>
+                                            </div>
+                                        </div>
+                                        <div class="step">
+                                            <div class="step-number">4</div>
+                                            <div class="step-content">
+                                                <h5>Hidden in Text</h5>
+                                                <p>Sometimes Baconian ciphers are hidden using font styles (bold/italic) or other visual cues!</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section class="lesson-section">
+                                    <h4>Decoding Strategy</h4>
+                                    <p>Follow these steps to decode a Baconian cipher:</p>
+                                    <ol>
+                                        <li><strong>Identify the two symbols</strong> used (A/B, 0/1, •/-, etc.)</li>
+                                        <li><strong>Group into sets of 5</strong> - each group = one letter</li>
+                                        <li><strong>Determine which symbol is A and which is B</strong> using pattern analysis</li>
+                                        <li><strong>Look up each 5-character code</strong> in the Baconian table</li>
+                                        <li><strong>Assemble the decoded letters</strong> to form words</li>
+                                    </ol>
+                                </section>
+
+                                <section class="lesson-section">
+                                    <h4>Practice Time!</h4>
+                                    <p>Try decoding this Baconian cipher. The symbols are 0 and 1 (where 0=A, 1=B):</p>
+                                    
+                                    <div class="practice-box">
+                                        <div class="cipher-text">00111 00010 01011 01011 01110</div>
+                                        <div class="practice-controls">
+                                            <input type="text" id="baconian-practice-input" placeholder="Enter your answer..." maxlength="15">
+                                            <button id="check-baconian-practice" class="practice-btn">Check Answer</button>
+                                        </div>
+                                        <div id="baconian-practice-result" class="practice-result"></div>
+                                        <div class="practice-hint baconian-hint" style="display: none;">
+                                            <p><strong>Hint:</strong> Group by 5: 00111=AABBB=H, 00010=AAAAB=B, 01011=ABABB=L, etc.</p>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section class="lesson-section">
+                                    <h4>Advanced Competition Techniques</h4>
+                                    <div class="tips-grid">
+                                        <div class="tip">
+                                            <i class="fas fa-eye"></i>
+                                            <h5>Visual Steganography</h5>
+                                            <p>Look for Baconian ciphers hidden in formatting: bold/regular text, different fonts, or spacing patterns</p>
+                                        </div>
+                                        <div class="tip">
+                                            <i class="fas fa-search"></i>
+                                            <h5>Symbol Detection</h5>
+                                            <p>If unsure which symbol is A vs B, look for "XXXXX" patterns - these must be A since BBBBB isn't valid</p>
+                                        </div>
+                                        <div class="tip">
+                                            <i class="fas fa-calculator"></i>
+                                            <h5>Quick Math</h5>
+                                            <p>Total characters must be divisible by 5. If not, look for hidden symbols or spacing</p>
+                                        </div>
+                                        <div class="tip">
+                                            <i class="fas fa-clock"></i>
+                                            <h5>Speed Tip</h5>
+                                            <p>Memorize common letters: A=AAAAA, E=AABAA, T=BAABB for faster decoding</p>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section class="lesson-section">
+                                    <h4>Ready to Practice?</h4>
+                                    <p>Now that you understand the Baconian cipher, test your skills with the interactive practice tool!</p>
+                                    <button class="start-practice-btn" onclick="switchTab('practice'); selectCipher('baconian');">
+                                        <i class="fas fa-play"></i> Start Practicing Baconian Cipher
+                                    </button>
+                                </section>
+                            </div>
+                        </div>
+
+                        <!-- Vigenère Cipher Tutorial -->
+                        <div class="tutorial-lesson" id="vigenere-tutorial">
+                            <div class="lesson-header">
+                                <h3><i class="fas fa-table"></i> Vigenère Cipher Tutorial</h3>
+                                <div class="lesson-meta">
+                                    <span class="difficulty intermediate">Intermediate</span>
+                                    <span class="duration">25 minutes</span>
+                                </div>
+                            </div>
+
+                            <div class="lesson-content">
+                                <section class="lesson-section">
+                                    <h4>What is the Vigenère Cipher?</h4>
+                                    <p>The Vigenère cipher is a polyalphabetic substitution cipher that uses a keyword to encrypt text. Unlike the Caesar cipher which uses one fixed shift for all letters, the Vigenère cipher uses multiple Caesar shifts in a repeating pattern based on the keyword. Each letter in the plaintext is paired with a corresponding letter from the repeating keyword, and they are combined using a special table called the Vigenère square.</p>
+                                    
+                                    <div class="example-box">
+                                        <h5>Historical Note</h5>
+                                        <p>Named after Blaise de Vigenère (though actually invented earlier by Giovan Battista Bellaso in 1553), this cipher was called "le chiffre indéchiffrable" (the indecipherable cipher) and remained unbroken for over 300 years! It wasn't successfully cryptanalyzed until Friedrich Kasiski developed his examination method in 1863, earning it the nickname "the unbreakable cipher."</p>
+                                    </div>
+                                </section>
+
+                                <section class="lesson-section">
+                                    <h4>How Does It Work?</h4>
+                                    <p>The Vigenère cipher uses a keyword that repeats to determine how much to shift each letter. There are two main methods to understand this:</p>
+                                    
+                                    <h5>Method 1: Mathematical Approach</h5>
+                                    <ol>
+                                        <li><strong>Choose a keyword</strong> (like "KEY" or "CIPHER")</li>
+                                        <li><strong>Repeat the keyword</strong> under your message until it matches the length</li>
+                                        <li><strong>Convert letters to numbers</strong> (A=0, B=1, C=2, etc.)</li>
+                                        <li><strong>Add the keyword number to the message number</strong> (mod 26)</li>
+                                        <li><strong>Convert back to letters</strong></li>
+                                    </ol>
+
+                                    <div class="cipher-demo">
+                                        <h5>Example with Keyword "KEY":</h5>
+                                        <div class="vigenere-demo">
+                                            <div class="demo-row">
+                                                <span class="label">Plaintext:</span>
+                                                <span class="letters">H E L L O</span>
+                                            </div>
+                                            <div class="demo-row">
+                                                <span class="label">Keyword:</span>
+                                                <span class="letters">K E Y K E</span>
+                                            </div>
+                                            <div class="demo-row">
+                                                <span class="label">Numbers:</span>
+                                                <span class="letters">H=7, E=4, L=11, L=11, O=14</span>
+                                            </div>
+                                            <div class="demo-row">
+                                                <span class="label">Key Numbers:</span>
+                                                <span class="letters">K=10, E=4, Y=24, K=10, E=4</span>
+                                            </div>
+                                            <div class="demo-row">
+                                                <span class="label">Addition:</span>
+                                                <span class="letters">7+10=17  4+4=8  11+24=35  11+10=21  14+4=18</span>
+                                            </div>
+                                            <div class="demo-row">
+                                                <span class="label">Mod 26:</span>
+                                                <span class="letters">17=R  8=I  35-26=9=J  21=V  18=S</span>
+                                            </div>
+                                        </div>
+                                        <div class="word-example">
+                                            <p><strong>Formula:</strong> Encrypted letter = (Plaintext letter + Key letter) mod 26</p>
+                                            <p><strong>Result:</strong> HELLO + KEY = <strong>RIJVS</strong></p>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section class="lesson-section">
+                                    <h4>The Vigenère Square (Tabula Recta)</h4>
+                                    <p>The traditional way to encode/decode Vigenère uses a 26×26 grid called the Vigenère square or tabula recta. This method is often faster than doing the math by hand!</p>
+                                    
+                                    <div class="vigenere-square">
+                                        <div class="square-explanation">
+                                            <p><strong>How to use the square for ENCODING:</strong></p>
+                                            <ol>
+                                                <li>Find the <strong>plaintext letter</strong> along the top row (columns)</li>
+                                                <li>Find the <strong>keyword letter</strong> along the left side (rows)</li>
+                                                <li>The intersection gives you the <strong>encrypted letter</strong></li>
+                                            </ol>
+                                            
+                                            <p><strong>How to use the square for DECODING:</strong></p>
+                                            <ol>
+                                                <li>Find the <strong>keyword letter</strong> along the left side (this determines the row)</li>
+                                                <li>Find the <strong>encrypted letter</strong> within that row</li>
+                                                <li>Trace up to the top to find the <strong>original plaintext letter</strong></li>
+                                            </ol>
+                                        </div>
+                                        <div class="mini-square">
+                                            <table>
+                                                <tr><td></td><td>A</td><td>B</td><td>C</td><td>D</td><td>E</td><td>F</td><td>G</td><td>H</td><td>...</td></tr>
+                                                <tr><td>A</td><td>A</td><td>B</td><td>C</td><td>D</td><td>E</td><td>F</td><td>G</td><td>H</td><td>...</td></tr>
+                                                <tr><td>B</td><td>B</td><td>C</td><td>D</td><td>E</td><td>F</td><td>G</td><td>H</td><td>I</td><td>...</td></tr>
+                                                <tr><td>C</td><td>C</td><td>D</td><td>E</td><td>F</td><td>G</td><td>H</td><td>I</td><td>J</td><td>...</td></tr>
+                                                <tr><td>E</td><td>E</td><td>F</td><td>G</td><td>H</td><td>I</td><td>J</td><td>K</td><td>L</td><td>...</td></tr>
+                                                <tr><td>K</td><td>K</td><td>L</td><td>M</td><td>N</td><td>O</td><td>P</td><td>Q</td><td>R</td><td>...</td></tr>
+                                                <tr><td>Y</td><td>Y</td><td>Z</td><td>A</td><td>B</td><td>C</td><td>D</td><td>E</td><td>F</td><td>...</td></tr>
+                                                <tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+                                            </table>
+                                            <p><small>Example: To encrypt H with key K, find row K and column H = R</small></p>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section class="lesson-section">
+                                    <h4>Decoding Strategy</h4>
+                                    <p>Decoding a Vigenère cipher depends on whether you know the keyword or not:</p>
+                                    
+                                    <h5>If you KNOW the keyword:</h5>
+                                    <div class="simple-decode">
+                                        <ol>
+                                            <li><strong>Write out the ciphertext and repeat the keyword below it</strong></li>
+                                            <li><strong>Use the Vigenère square:</strong> Find the keyword letter's row, locate the ciphertext letter in that row, then trace up to find the plaintext</li>
+                                            <li><strong>Or use math:</strong> Subtract the keyword letter value from the ciphertext letter value (mod 26)</li>
+                                        </ol>
+                                        <p><strong>Formula:</strong> Plaintext = (Ciphertext - Keyword) mod 26</p>
+                                        <p><small>Note: If the result is negative, add 26 to get the correct letter.</small></p>
+                                    </div>
+                                    
+                                    <h5>If you DON'T know the keyword (Cryptanalysis):</h5>
+                                    <div class="strategy-steps">
+                                        <div class="step">
+                                            <div class="step-number">1</div>
+                                            <div class="step-content">
+                                                <h5>Kasiski Examination</h5>
+                                                <p>Look for repeated groups of 3+ letters in the ciphertext. The distance between repetitions is often a multiple of the keyword length. Find the greatest common divisor of these distances.</p>
+                                            </div>
+                                        </div>
+                                        <div class="step">
+                                            <div class="step-number">2</div>
+                                            <div class="step-content">
+                                                <h5>Split into Caesar Ciphers</h5>
+                                                <p>Once you know the keyword length, split the cipher into groups. Each position uses the same Caesar shift. For a 5-letter keyword, every 5th letter uses the same shift.</p>
+                                            </div>
+                                        </div>
+                                        <div class="step">
+                                            <div class="step-number">3</div>
+                                            <div class="step-content">
+                                                <h5>Frequency Analysis</h5>
+                                                <p>Each group is a Caesar cipher. Use frequency analysis: E is the most common English letter (12.7%), followed by T (9.1%) and A (8.2%). Find what letter appears most in each group.</p>
+                                            </div>
+                                        </div>
+                                        <div class="step">
+                                            <div class="step-number">4</div>
+                                            <div class="step-content">
+                                                <h5>Reconstruct and Test</h5>
+                                                <p>Convert the shifts back to letters to build the keyword. Test your keyword by decoding the message - it should produce readable English text.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section class="lesson-section">
+                                    <h4>Practice Time!</h4>
+                                    <p>Try decoding this Vigenère cipher. The keyword is "MATH" (Science Olympiad themed!):</p>
+                                    
+                                    <div class="practice-box">
+                                        <div class="cipher-text">TSKP</div>
+                                        <div class="practice-hint-text">Keyword: MATH, Ciphertext: TSKP</div>
+                                        <p class="practice-explanation">
+                                            <strong>Step-by-step:</strong> Line up the keyword under each letter: T-M, S-A, K-T, P-H. 
+                                            Now decode each pair using the Vigenère square or subtraction method.
+                                        </p>
+                                        <div class="practice-controls">
+                                            <input type="text" id="vigenere-practice-input" placeholder="Enter your answer..." maxlength="15">
+                                            <button id="check-vigenere-practice" class="practice-btn">Check Answer</button>
+                                        </div>
+                                        <div id="vigenere-practice-result" class="practice-result"></div>
+                                        <div class="practice-hint vigenere-hint" style="display: none;">
+                                            <p><strong>Hint:</strong> T-M = 19-12 = 7 = H, S-A = 18-0 = 18 = S, K-T = 10-19 = -9, -9+26 = 17 = R, P-H = 15-7 = 8 = I</p>
+                                            <p><strong>Remember:</strong> If subtraction gives a negative number, add 26!</p>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section class="lesson-section">
+                                    <h4>Science Olympiad Competition Tips</h4>
+                                    <div class="tips-grid">
+                                        <div class="tip">
+                                            <i class="fas fa-search"></i>
+                                            <h5>Look for Repetitions</h5>
+                                            <p>Use the Kasiski examination: repeated groups of 3+ letters often occur when the same plaintext is encrypted by the same part of the keyword. Measure distances between repetitions.</p>
+                                        </div>
+                                        <div class="tip">
+                                            <i class="fas fa-ruler"></i>
+                                            <h5>Common Keyword Lengths</h5>
+                                            <p>In Science Olympiad, keywords are typically 3-7 letters long. Start with lengths 3, 4, 5, and 6. Most common are 4-5 letter keywords.</p>
+                                        </div>
+                                        <div class="tip">
+                                            <i class="fas fa-calculator"></i>
+                                            <h5>Quick Decoding Formula</h5>
+                                            <p>If given the keyword: (Ciphertext - Keyword) mod 26. If negative, add 26. Example: (K-M) = (10-12) = -2, so -2+26 = 24 = Y</p>
+                                        </div>
+                                        <div class="tip">
+                                            <i class="fas fa-lightbulb"></i>
+                                            <h5>Science-Themed Keywords</h5>
+                                            <p>Common Science Olympiad keywords: ATOM, GENE, MATH, PHYSICS, CHEMISTRY, BIOLOGY, EARTH, SPACE, MEDAL, TEAM</p>
+                                        </div>
+                                        <div class="tip">
+                                            <i class="fas fa-clock"></i>
+                                            <h5>Time Management</h5>
+                                            <p>If the keyword is given, focus on accuracy over speed. If not given, try common science words first before doing full cryptanalysis.</p>
+                                        </div>
+                                        <div class="tip">
+                                            <i class="fas fa-chart-bar"></i>
+                                            <h5>Frequency Analysis</h5>
+                                            <p>English letter frequencies: E(12.7%), T(9.1%), A(8.2%), O(7.5%), I(7.0%), N(6.7%), S(6.3%). Most common letters in each Caesar group likely decode to these.</p>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section class="lesson-section">
+                                    <h4>Advanced Cryptanalysis Techniques</h4>
+                                    <p>For when you need to crack a Vigenère cipher without the keyword:</p>
+                                    
+                                    <div class="advanced-techniques">
+                                        <div class="technique">
+                                            <h5><i class="fas fa-chart-line"></i> Index of Coincidence (IC)</h5>
+                                            <p>A statistical measure to find keyword length. English text has IC ≈ 0.067. Split cipher text into groups and calculate IC for each group size. The correct keyword length will give IC values closest to 0.067.</p>
+                                        </div>
+                                        
+                                        <div class="technique">
+                                            <h5><i class="fas fa-bullseye"></i> Chi-Squared Test</h5>
+                                            <p>Statistical method to verify if your decrypted text looks like English. Compare letter frequencies in your decryption to expected English frequencies. Lower chi-squared values indicate better matches.</p>
+                                        </div>
+                                        
+                                        <div class="technique">
+                                            <h5><i class="fas fa-key"></i> Known Plaintext Attack</h5>
+                                            <p>If you can guess part of the message (like "THE" or "AND"), align it with the ciphertext to reveal part of the keyword. Use this partial keyword to decode more of the message.</p>
+                                        </div>
+                                        
+                                        <div class="technique">
+                                            <h5><i class="fas fa-sync-alt"></i> Autokey Variant</h5>
+                                            <p>Some competitions use autokey ciphers where the keyword is followed by the plaintext itself. Start with a short keyword, then use the decrypted letters as the continuing key.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="quick-reference">
+                                        <h5>Quick Reference - Decryption Steps:</h5>
+                                        <ol>
+                                            <li>Look for repeated patterns → estimate keyword length</li>
+                                            <li>Split ciphertext into groups based on keyword length</li>
+                                            <li>Perform frequency analysis on each group</li>
+                                            <li>Identify most common letter in each group (likely represents E)</li>
+                                            <li>Calculate shift for each position → build keyword</li>
+                                            <li>Test keyword by decrypting the entire message</li>
+                                        </ol>
+                                    </div>
+                                </section>
+
+                                <section class="lesson-section">
+                                    <h4>Ready to Practice?</h4>
+                                    <p>Now that you understand the Vigenère cipher, test your skills with the interactive practice tool!</p>
+                                    <button class="start-practice-btn" onclick="switchTab('practice'); selectCipher('vigenere');">
+                                        <i class="fas fa-play"></i> Start Practicing Vigenère Cipher
+                                    </button>
+                                </section>
+                            </div>
+                        </div>
+
+                        <!-- Binary Code Tutorial -->
+                        <div class="tutorial-lesson" id="binary-tutorial">
+                            <div class="lesson-header">
+                                <h3><i class="fas fa-calculator"></i> Binary Code Tutorial</h3>
+                                <div class="lesson-meta">
+                                    <span class="difficulty intermediate">Intermediate</span>
+                                    <span class="duration">20 minutes</span>
+                                </div>
+                            </div>
+
+                            <div class="lesson-content">
+                                <section class="lesson-section">
+                                    <h4>What is Binary Code?</h4>
+                                    <p>Binary code is the fundamental language of computers, using only 0s and 1s to represent all information. In Science Olympiad CodeBusters competitions, you'll typically work with ASCII binary, where each letter is represented by an 8-bit (8 digit) binary number.</p>
+                                    
+                                    <div class="example-box">
+                                        <h5>Why Binary?</h5>
+                                        <p>Computers use binary because electronic circuits can easily represent two states: ON (1) and OFF (0). This simple system can represent any character, number, or symbol!</p>
+                                    </div>
+                                </section>
+
+                                <section class="lesson-section">
+                                    <h4>Understanding Binary Numbers</h4>
+                                    <p>Binary is a base-2 number system (unlike our usual base-10 decimal system). Each position represents a power of 2:</p>
+
+                                    <div class="cipher-demo">
+                                        <h5>8-Bit Binary Place Values:</h5>
+                                        <div class="binary-demo">
+                                            <div class="binary-positions">
+                                                <div class="position">
+                                                    <span class="bit-value">128</span>
+                                                    <span class="bit-power">2⁷</span>
+                                                </div>
+                                                <div class="position">
+                                                    <span class="bit-value">64</span>
+                                                    <span class="bit-power">2⁶</span>
+                                                </div>
+                                                <div class="position">
+                                                    <span class="bit-value">32</span>
+                                                    <span class="bit-power">2⁵</span>
+                                                </div>
+                                                <div class="position">
+                                                    <span class="bit-value">16</span>
+                                                    <span class="bit-power">2⁴</span>
+                                                </div>
+                                                <div class="position">
+                                                    <span class="bit-value">8</span>
+                                                    <span class="bit-power">2³</span>
+                                                </div>
+                                                <div class="position">
+                                                    <span class="bit-value">4</span>
+                                                    <span class="bit-power">2²</span>
+                                                </div>
+                                                <div class="position">
+                                                    <span class="bit-value">2</span>
+                                                    <span class="bit-power">2¹</span>
+                                                </div>
+                                                <div class="position">
+                                                    <span class="bit-value">1</span>
+                                                    <span class="bit-power">2⁰</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="word-example">
+                                        <h5>Example: Converting 'A' to Binary</h5>
+                                        <p><strong>A</strong> has ASCII value <strong>65</strong></p>
+                                        <p>65 = 64 + 1 = 2⁶ + 2⁰</p>
+                                        <p>So <strong>A = 01000001</strong> in binary</p>
+                                        <div class="binary-breakdown">
+                                            <span class="bit">0</span><span class="bit">1</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">1</span>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section class="lesson-section">
+                                    <h4>ASCII Reference for Common Letters</h4>
+                                    <div class="ascii-table">
+                                        <div class="ascii-row header">
+                                            <span>Letter</span>
+                                            <span>ASCII</span>
+                                            <span>Binary</span>
+                                        </div>
+                                        <div class="ascii-row">
+                                            <span>A</span>
+                                            <span>65</span>
+                                            <span>01000001</span>
+                                        </div>
+                                        <div class="ascii-row">
+                                            <span>B</span>
+                                            <span>66</span>
+                                            <span>01000010</span>
+                                        </div>
+                                        <div class="ascii-row">
+                                            <span>C</span>
+                                            <span>67</span>
+                                            <span>01000011</span>
+                                        </div>
+                                        <div class="ascii-row">
+                                            <span>H</span>
+                                            <span>72</span>
+                                            <span>01001000</span>
+                                        </div>
+                                        <div class="ascii-row">
+                                            <span>I</span>
+                                            <span>73</span>
+                                            <span>01001001</span>
+                                        </div>
+                                        <div class="ascii-row">
+                                            <span>Space</span>
+                                            <span>32</span>
+                                            <span>00100000</span>
+                                        </div>
+                                    </div>
+                                    <p class="ascii-note"><strong>Pattern:</strong> Notice that consecutive letters increase by 1 in their ASCII values!</p>
+                                </section>
+
+                                <section class="lesson-section">
+                                    <h4>Step-by-Step Decoding Process</h4>
+                                    <ol class="decoding-steps">
+                                        <li><strong>Split the binary:</strong> Separate into 8-bit groups (bytes)</li>
+                                        <li><strong>Convert to decimal:</strong> Calculate the decimal value of each byte</li>
+                                        <li><strong>Find the character:</strong> Convert decimal to ASCII character</li>
+                                        <li><strong>Combine letters:</strong> Put characters together to form the word</li>
+                                    </ol>
+
+                                    <div class="step-example">
+                                        <h5>Example: Decode 0100100001001001</h5>
+                                        <div class="decode-step">
+                                            <span class="step-num">1.</span>
+                                            <span class="step-text">Split: <code>01001000</code> <code>01001001</code></span>
+                                        </div>
+                                        <div class="decode-step">
+                                            <span class="step-num">2.</span>
+                                            <span class="step-text">Convert: 64+8=72, 64+8+1=73</span>
+                                        </div>
+                                        <div class="decode-step">
+                                            <span class="step-num">3.</span>
+                                            <span class="step-text">ASCII: 72=H, 73=I</span>
+                                        </div>
+                                        <div class="decode-step">
+                                            <span class="step-num">4.</span>
+                                            <span class="step-text">Result: <strong>HI</strong></span>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section class="lesson-section">
+                                    <h4>Practice Time!</h4>
+                                    <p>Try decoding this binary message:</p>
+                                    
+                                    <div class="practice-box">
+                                        <div class="cipher-text">010000110100111101000100010001010010000001000010010100100100010101000001010010110100010101010010</div>
+                                        <div class="practice-controls">
+                                            <input type="text" id="binary-practice-input" placeholder="Enter your answer..." maxlength="15">
+                                            <button id="check-binary-practice" class="practice-btn">Check Answer</button>
+                                        </div>
+                                        <div id="binary-practice-result" class="practice-result"></div>
+                                        <div class="practice-hint" id="binary-hint" style="display: none;">
+                                            <p><strong>Hint:</strong> Break it into 8-bit groups: 01000011 01001111 01000100 01000101 00100000 01000010 01010010 01000101 01000001 01001011 01000101 01010010</p>
+                                            <p>Convert each to decimal, then to letters. Remember: A=65, B=66, C=67, etc.</p>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section class="lesson-section">
+                                    <h4>Competition Tips & Tricks</h4>
+                                    <div class="tips-grid">
+                                        <div class="tip">
+                                            <i class="fas fa-calculator"></i>
+                                            <h5>Quick Conversion</h5>
+                                            <p>Learn common patterns: 01000001=A, 01000010=B. Each letter increases by 1!</p>
+                                        </div>
+                                        <div class="tip">
+                                            <i class="fas fa-scissors"></i>
+                                            <h5>Group Strategy</h5>
+                                            <p>Always count in groups of 8. If you get 7 or 9 digits, recheck your grouping!</p>
+                                        </div>
+                                        <div class="tip">
+                                            <i class="fas fa-eye"></i>
+                                            <h5>Pattern Recognition</h5>
+                                            <p>Space (00100000) is common between words. Look for this pattern to separate words.</p>
+                                        </div>
+                                        <div class="tip">
+                                            <i class="fas fa-clock"></i>
+                                            <h5>Speed Method</h5>
+                                            <p>For uppercase letters, look at the last 5 bits after '010'. A=00001, B=00010, C=00011, etc.</p>
+                                        </div>
+                                        <div class="tip">
+                                            <i class="fas fa-list-ol"></i>
+                                            <h5>Common Values</h5>
+                                            <p>Memorize: A=65, E=69, I=73, O=79, U=85, Space=32. These appear frequently!</p>
+                                        </div>
+                                        <div class="tip">
+                                            <i class="fas fa-check-double"></i>
+                                            <h5>Double Check</h5>
+                                            <p>Verify by converting your answer back to binary. Does it match the original?</p>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section class="lesson-section">
+                                    <h4>Advanced: Working with Numbers and Symbols</h4>
+                                    <p>In some competitions, you might encounter numbers (0-9 = ASCII 48-57) or symbols:</p>
+                                    <div class="advanced-ascii">
+                                        <div class="ascii-row">
+                                            <span>'0'</span>
+                                            <span>48</span>
+                                            <span>00110000</span>
+                                        </div>
+                                        <div class="ascii-row">
+                                            <span>'1'</span>
+                                            <span>49</span>
+                                            <span>00110001</span>
+                                        </div>
+                                        <div class="ascii-row">
+                                            <span>'!'</span>
+                                            <span>33</span>
+                                            <span>00100001</span>
+                                        </div>
+                                        <div class="ascii-row">
+                                            <span>'?'</span>
+                                            <span>63</span>
+                                            <span>00111111</span>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section class="lesson-section">
+                                    <h4>Ready to Practice?</h4>
+                                    <p>Now that you understand binary code, head to the Practice tab to test your skills with various difficulty levels!</p>
+                                    <button class="start-practice-btn" onclick="switchToTab('practice')">
+                                        <i class="fas fa-play"></i> Start Practicing Binary Code
+                                    </button>
+                                </section>
+                            </div>
+                        </div>
+
+                        <!-- Placeholder for other tutorials -->
+                        <div class="tutorial-lesson" id="coming-soon">
+                            <div class="coming-soon-content">
+                                <i class="fas fa-calendar-alt"></i>
+                                <h3>More Tutorials Coming Soon!</h3>
+                                <p>We're adding new cipher tutorials every two days. Next up: Atbash Cipher!</p>
+                                <div class="tutorial-schedule">
+                                    <div class="schedule-item">
+                                        <span class="date">Day 3</span>
+                                        <span class="cipher">Atbash Cipher</span>
+                                    </div>
+                                    <div class="schedule-item">
+                                        <span class="date">Day 5</span>
+                                        <span class="cipher">Keyword Cipher</span>
+                                    </div>
+                                    <div class="schedule-item">
+                                        <span class="date">Day 7</span>
+                                        <span class="cipher">Vigenère Cipher</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Tab Content -->
+            <div class="tab-content" id="faq-tab" role="tabpanel" aria-labelledby="faq-tab-label">
+                <div class="faq-section">
+                    <h2 id="faq-tab-label"><i class="fas fa-question-circle"></i> Frequently Asked Questions - Science Olympiad CodeBusters</h2>
+                    <p class="faq-intro">Get answers to common questions about Science Olympiad CodeBusters competition and cipher practice.</p>
+                    
+                    <div class="faq-container">
+                        <details class="faq-item">
+                            <summary>What is Science Olympiad CodeBusters?</summary>
+                            <p>CodeBusters is a Science Olympiad event where teams cryptanalyze and decode encrypted messages using various cipher techniques including Caesar, Baconian, Vigenère, and Morse code. It's designed to test students' knowledge of cryptography and pattern recognition skills.</p>
+                        </details>
+                        
+                        <details class="faq-item">
+                            <summary>What ciphers are used in CodeBusters 2025?</summary>
+                            <p>The 2025-2026 season includes Caesar, Atbash, Affine, Vigenère, Baconian, Hill, Running-Key, RSA ciphers, and introduces the new Checkerboard Cipher. Also featured are aristocrats and patristocrats (monoalphabetic substitution ciphers).</p>
+                        </details>
+                        
+                        <details class="faq-item">
+                            <summary>How can I practice for Science Olympiad CodeBusters?</summary>
+                            <p>Use our free interactive practice tool with step-by-step tutorials, practice exercises, and competition tips. Start with Caesar cipher and progress to advanced techniques. Our Cipher 101 tutorials provide comprehensive learning for each cipher type.</p>
+                        </details>
+                        
+                        <details class="faq-item">
+                            <summary>What's the difference between Division B and Division C CodeBusters?</summary>
+                            <p>Division B (middle school) and Division C (high school) both compete in CodeBusters, but Division C typically involves more complex ciphers and advanced cryptanalysis techniques. Both divisions benefit from practicing the fundamental ciphers available on this site.</p>
+                        </details>
+                        
+                        <details class="faq-item">
+                            <summary>Is this practice tool really free?</summary>
+                            <p>Yes! Our Science Olympiad CodeBusters practice tool is completely free. We provide interactive cipher practice, detailed tutorials, competition tips, and progress tracking to help students succeed in Science Olympiad competitions.</p>
+                        </details>
+                        
+                        <details class="faq-item">
+                            <summary>How do I get started with cipher practice?</summary>
+                            <p>Start with the Practice tab to immediately begin solving ciphers, or visit Cipher 101 for step-by-step tutorials. We recommend beginning with the Caesar cipher tutorial and practice exercises before moving to more complex ciphers.</p>
+                        </details>
+                        
+                        <details class="faq-item">
+                            <summary>Can I track my progress and statistics?</summary>
+                            <p>Yes! Sign in with your Google account to save your progress, track statistics, and access your personalized dashboard. Your accuracy rates and cipher preferences are automatically saved.</p>
+                        </details>
+                        
+                        <details class="faq-item">
+                            <summary>What difficulty levels are available?</summary>
+                            <p>We offer four difficulty levels: Easy (3-5 letters), Medium (6-10 letters), Hard (11-15 letters), and Expert (full sentences). Start with Easy and progress as your skills improve.</p>
+                        </details>
+                        
+                        <details class="faq-item">
+                            <summary>Are these the same ciphers used in actual competitions?</summary>
+                            <p>Yes! Our cipher implementations follow the official Science Olympiad CodeBusters rules for the 2025-2026 season. Practice here directly prepares you for competition scenarios.</p>
+                        </details>
+                        
+                        <details class="faq-item">
+                            <summary>How often are new features added?</summary>
+                            <p>We regularly update the practice tool with new cipher types, tutorials, and features. New Cipher 101 tutorials are added every few days, and we continuously improve based on user feedback.</p>
+                        </details>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Engineering Articles Tab Content -->
+            <div class="tab-content" id="engineering-tab" role="tabpanel" aria-labelledby="engineering-tab-label">
+                <div class="engineering-section">
+                    <h2 id="engineering-tab-label"><i class="fas fa-cogs"></i> Engineering Articles</h2>
+                    <p class="engineering-intro">Deep dive into computer science concepts, systems engineering, and software development practices. Learn about time systems, distributed computing, cryptography, and more.</p>
+                    
+                    <div class="articles-preview">
+                        <div class="featured-article">
+                            <div class="article-badge">
+                                <i class="fas fa-star"></i> Featured
+                            </div>
+                            <div class="article-content">
+                                <div class="article-header">
+                                    <div class="article-icon">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="article-info">
+                                        <h3>Time Systems & Clock Coordination</h3>
+                                        <div class="article-meta">
+                                            <span class="difficulty intermediate">Intermediate</span>
+                                            <span class="reading-time">15 min read</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="article-description">Understanding GMT, UTC, leap seconds, clock skew, and time synchronization in computer systems. Learn about NTP, distributed system time coordination, and practical implications for software development.</p>
+                                <div class="article-topics">
+                                    <span class="topic">Time Standards</span>
+                                    <span class="topic">NTP Protocol</span>
+                                    <span class="topic">Clock Skew</span>
+                                    <span class="topic">Distributed Systems</span>
+                                </div>
+                                <div class="article-actions">
+                                    <a href="articles/time_systems.html" class="read-article-btn">
+                                        <i class="fas fa-book-open"></i> Read Article
+                                    </a>
+                                    <button class="bookmark-btn" onclick="bookmarkArticle('time_systems')">
+                                        <i class="fas fa-bookmark"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="articles-categories">
+                            <h3>Article Categories</h3>
+                            <div class="category-grid">
+                                <div class="category-card">
+                                    <div class="category-icon">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <h4>Time & Synchronization</h4>
+                                    <p>Clock systems, NTP, distributed time coordination</p>
+                                    <div class="category-stats">
+                                        <span class="article-count">1 article</span>
+                                        <span class="difficulty-range">Beginner - Intermediate</span>
+                                    </div>
+                                </div>
+
+                                <div class="category-card coming-soon">
+                                    <div class="category-icon">
+                                        <i class="fas fa-microchip"></i>
+                                    </div>
+                                    <h4>Computer Systems</h4>
+                                    <p>CPU architecture, memory systems, operating systems</p>
+                                    <div class="category-stats">
+                                        <span class="coming-soon-badge">Coming Soon</span>
+                                    </div>
+                                </div>
+
+                                <div class="category-card coming-soon">
+                                    <div class="category-icon">
+                                        <i class="fas fa-code"></i>
+                                    </div>
+                                    <h4>Software Engineering</h4>
+                                    <p>Version control, testing, CI/CD, system design</p>
+                                    <div class="category-stats">
+                                        <span class="coming-soon-badge">Coming Soon</span>
+                                    </div>
+                                </div>
+
+                                <div class="category-card coming-soon">
+                                    <div class="category-icon">
+                                        <i class="fas fa-shield-alt"></i>
+                                    </div>
+                                    <h4>Security & Cryptography</h4>
+                                    <p>Modern algorithms, network protocols, PKI</p>
+                                    <div class="category-stats">
+                                        <span class="coming-soon-badge">Coming Soon</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="engineering-cta">
+                            <div class="cta-content">
+                                <h3>Explore All Articles</h3>
+                                <p>Access the complete collection of engineering articles with detailed explanations, interactive examples, and practical applications.</p>
+                                <a href="articles/" class="view-all-btn">
+                                    <i class="fas fa-external-link-alt"></i> View All Articles
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="quick-actions">
+        <a href="{{ url_for('index') }}" class="action-btn primary">
+            <i class="fas fa-play"></i> Start Practice
+        </a>
+        <button class="action-btn secondary" onclick="resetStats()">
+            <i class="fas fa-redo"></i> Reset Statistics
+        </button>
+    </div>
+
+
+    <!-- Modals removed - all information now displays in the hint area below -->
+
+    <!-- Structured Data for Search Engines -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "Science Olympiad Code Breaker Practice",
+        "description": "Free online practice platform for Science Olympiad Code Breaker event, specializing in middle school cipher training and cryptography education.",
+        "url": "https://scioly-code-breaker.com",
+        "sameAs": [
+            "https://www.soinc.org"
+        ],
+        "educationalLevel": "Middle School",
+        "teaches": [
+            "Cryptography",
+            "Caesar Cipher",
+            "Morse Code",
+            "Atbash Cipher",
+            "Vigenère Cipher",
+            "Code Breaking",
+            "Science Olympiad Preparation"
+        ],
+        "audience": {
+            "@type": "EducationalAudience",
+            "educationalRole": "student",
+            "audienceType": "Middle School Students"
+        }
+    }
+    </script>
+    
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html> 

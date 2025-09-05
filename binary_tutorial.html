@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Code Tutorial - Science Olympiad Code Breaker Practice</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="header-left">
+                    <h1><i class="fas fa-unlock-alt"></i> Science Olympiad Code Breaker Practice</h1>
+                    <p>Master cipher decoding and cryptography for Science Olympiad middle school competitions. Practice Caesar, Morse, and advanced codes!</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <!-- Tab Navigation -->
+            <div class="tab-navigation">
+                <button class="tab-btn" data-tab="practice">
+                    <i class="fas fa-gamepad"></i> Practice
+                </button>
+                <button class="tab-btn active" data-tab="tutorials">
+                    <i class="fas fa-graduation-cap"></i> Cipher 101
+                </button>
+            </div>
+
+            <!-- Practice Tab Content -->
+            <div class="tab-content" id="practice-tab">
+                <div class="cipher-selection">
+                    <h2>Choose Your Science Olympiad Cipher Practice</h2>
+                    <p class="cipher-intro">Select from popular Science Olympiad Code Breaker ciphers used in middle school competitions:</p>
+                    <div class="cipher-grid">
+                        <button class="cipher-btn" data-cipher="caesar">
+                            <i class="fas fa-exchange-alt"></i>
+                            <span>Caesar Cipher</span>
+                            <small>Shift cipher - perfect for beginners</small>
+                        </button>
+                        <button class="cipher-btn active" data-cipher="binary">
+                            <i class="fas fa-calculator"></i>
+                            <span>Binary Code</span>
+                            <small>ASCII binary representation</small>
+                        </button>
+                        <button class="cipher-btn" data-cipher="morse">
+                            <i class="fas fa-dot-circle"></i>
+                            <span>Morse Code</span>
+                            <small>Dots and dashes communication</small>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="practice-area">
+                    <div class="cipher-info">
+                        <h3 id="cipher-name">Binary Code</h3>
+                        <p id="cipher-description">Convert letters to their binary representation (A=01000001).</p>
+                    </div>
+
+                    <div class="cipher-controls">
+                        <div class="control-group">
+                            <label for="difficulty">Difficulty:</label>
+                            <select id="difficulty">
+                                <option value="easy">Easy (3-5 letters)</option>
+                                <option value="medium" selected>Medium (6-10 letters)</option>
+                                <option value="hard">Hard (11-15 letters)</option>
+                            </select>
+                        </div>
+                        <button id="generate-btn" class="generate-btn">
+                            <i class="fas fa-random"></i> Generate New Code
+                        </button>
+                    </div>
+
+                    <div class="code-display">
+                        <h4>Encoded Message:</h4>
+                        <div class="encoded-text" id="encoded-text">
+                            Click "Generate New Code" to start!
+                        </div>
+                    </div>
+
+                    <div class="decode-section">
+                        <h4>Your Decoded Answer:</h4>
+                        <div class="input-group">
+                            <input type="text" id="decoded-input" placeholder="Enter your decoded text here..." maxlength="50">
+                            <button id="check-btn" class="check-btn">
+                                <i class="fas fa-check"></i> Check Answer
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="result" id="result">
+                        <!-- Result will be displayed here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tutorials Tab Content -->
+            <div class="tab-content active" id="tutorials-tab">
+                <div class="tutorials-section">
+                    <h2><i class="fas fa-graduation-cap"></i> Cipher 101 Tutorials</h2>
+                    <p class="tutorials-intro">Learn the fundamentals of each cipher with step-by-step tutorials designed for Science Olympiad competition success.</p>
+                    
+                    <div class="tutorial-nav">
+                        <button class="tutorial-btn" data-tutorial="caesar">
+                            <i class="fas fa-exchange-alt"></i>
+                            <span>Caesar Cipher</span>
+                            <small>Available Now</small>
+                        </button>
+                        <button class="tutorial-btn active" data-tutorial="binary">
+                            <i class="fas fa-calculator"></i>
+                            <span>Binary Code</span>
+                            <small>Available Now</small>
+                        </button>
+                        <button class="tutorial-btn disabled" data-tutorial="morse">
+                            <i class="fas fa-dot-circle"></i>
+                            <span>Morse Code</span>
+                            <small>Coming Soon</small>
+                        </button>
+                    </div>
+
+                    <div class="tutorial-content">
+                        <!-- Binary Code Tutorial -->
+                        <div class="tutorial-lesson active" id="binary-tutorial">
+                            <div class="lesson-header">
+                                <h3><i class="fas fa-calculator"></i> Binary Code Tutorial</h3>
+                                <div class="lesson-meta">
+                                    <span class="difficulty intermediate">Intermediate</span>
+                                    <span class="duration">20 minutes</span>
+                                </div>
+                            </div>
+
+                            <div class="lesson-content">
+                                <section class="lesson-section">
+                                    <h4>What is Binary Code?</h4>
+                                    <p>Binary code is the fundamental language of computers, using only 0s and 1s to represent all information. In Science Olympiad CodeBusters competitions, you'll typically work with ASCII binary, where each letter is represented by an 8-bit (8 digit) binary number.</p>
+                                    
+                                    <div class="example-box">
+                                        <h5>Why Binary?</h5>
+                                        <p>Computers use binary because electronic circuits can easily represent two states: ON (1) and OFF (0). This simple system can represent any character, number, or symbol!</p>
+                                    </div>
+                                </section>
+
+                                <section class="lesson-section">
+                                    <h4>Understanding Binary Numbers</h4>
+                                    <p>Binary is a base-2 number system (unlike our usual base-10 decimal system). Each position represents a power of 2:</p>
+
+                                    <div class="cipher-demo">
+                                        <h5>8-Bit Binary Place Values:</h5>
+                                        <div class="binary-demo">
+                                            <div class="binary-positions">
+                                                <div class="position">
+                                                    <span class="bit-value">128</span>
+                                                    <span class="bit-power">2⁷</span>
+                                                </div>
+                                                <div class="position">
+                                                    <span class="bit-value">64</span>
+                                                    <span class="bit-power">2⁶</span>
+                                                </div>
+                                                <div class="position">
+                                                    <span class="bit-value">32</span>
+                                                    <span class="bit-power">2⁵</span>
+                                                </div>
+                                                <div class="position">
+                                                    <span class="bit-value">16</span>
+                                                    <span class="bit-power">2⁴</span>
+                                                </div>
+                                                <div class="position">
+                                                    <span class="bit-value">8</span>
+                                                    <span class="bit-power">2³</span>
+                                                </div>
+                                                <div class="position">
+                                                    <span class="bit-value">4</span>
+                                                    <span class="bit-power">2²</span>
+                                                </div>
+                                                <div class="position">
+                                                    <span class="bit-value">2</span>
+                                                    <span class="bit-power">2¹</span>
+                                                </div>
+                                                <div class="position">
+                                                    <span class="bit-value">1</span>
+                                                    <span class="bit-power">2⁰</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="word-example">
+                                        <h5>Example: Converting 'A' to Binary</h5>
+                                        <p><strong>A</strong> has ASCII value <strong>65</strong></p>
+                                        <p>65 = 64 + 1 = 2⁶ + 2⁰</p>
+                                        <p>So <strong>A = 01000001</strong> in binary</p>
+                                        <div class="binary-breakdown">
+                                            <span class="bit">0</span><span class="bit">1</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">1</span>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section class="lesson-section">
+                                    <h4>ASCII Reference for Common Letters</h4>
+                                    <div class="ascii-table">
+                                        <div class="ascii-row header">
+                                            <span>Letter</span>
+                                            <span>ASCII</span>
+                                            <span>Binary</span>
+                                        </div>
+                                        <div class="ascii-row">
+                                            <span>A</span>
+                                            <span>65</span>
+                                            <span>01000001</span>
+                                        </div>
+                                        <div class="ascii-row">
+                                            <span>B</span>
+                                            <span>66</span>
+                                            <span>01000010</span>
+                                        </div>
+                                        <div class="ascii-row">
+                                            <span>C</span>
+                                            <span>67</span>
+                                            <span>01000011</span>
+                                        </div>
+                                        <div class="ascii-row">
+                                            <span>H</span>
+                                            <span>72</span>
+                                            <span>01001000</span>
+                                        </div>
+                                        <div class="ascii-row">
+                                            <span>I</span>
+                                            <span>73</span>
+                                            <span>01001001</span>
+                                        </div>
+                                        <div class="ascii-row">
+                                            <span>Space</span>
+                                            <span>32</span>
+                                            <span>00100000</span>
+                                        </div>
+                                    </div>
+                                    <p class="ascii-note"><strong>Pattern:</strong> Notice that consecutive letters increase by 1 in their ASCII values!</p>
+                                </section>
+
+                                <section class="lesson-section">
+                                    <h4>Step-by-Step Decoding Process</h4>
+                                    <ol class="decoding-steps">
+                                        <li><strong>Split the binary:</strong> Separate into 8-bit groups (bytes)</li>
+                                        <li><strong>Convert to decimal:</strong> Calculate the decimal value of each byte</li>
+                                        <li><strong>Find the character:</strong> Convert decimal to ASCII character</li>
+                                        <li><strong>Combine letters:</strong> Put characters together to form the word</li>
+                                    </ol>
+
+                                    <div class="step-example">
+                                        <h5>Example: Decode 0100100001001001</h5>
+                                        <div class="decode-step">
+                                            <span class="step-num">1.</span>
+                                            <span class="step-text">Split: <code>01001000</code> <code>01001001</code></span>
+                                        </div>
+                                        <div class="decode-step">
+                                            <span class="step-num">2.</span>
+                                            <span class="step-text">Convert: 64+8=72, 64+8+1=73</span>
+                                        </div>
+                                        <div class="decode-step">
+                                            <span class="step-num">3.</span>
+                                            <span class="step-text">ASCII: 72=H, 73=I</span>
+                                        </div>
+                                        <div class="decode-step">
+                                            <span class="step-num">4.</span>
+                                            <span class="step-text">Result: <strong>HI</strong></span>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section class="lesson-section">
+                                    <h4>Practice Time!</h4>
+                                    <p>Try decoding this binary message:</p>
+                                    
+                                    <div class="practice-box">
+                                        <div class="cipher-text">010000110100111101000100010001010010000001000010010100100100010101000001010010110100010101010010</div>
+                                        <div class="practice-controls">
+                                            <input type="text" id="binary-practice-input" placeholder="Enter your answer..." maxlength="15">
+                                            <button id="check-binary-practice" class="practice-btn">Check Answer</button>
+                                        </div>
+                                        <div id="binary-practice-result" class="practice-result"></div>
+                                        <div class="practice-hint" id="binary-hint" style="display: none;">
+                                            <p><strong>Hint:</strong> Break it into 8-bit groups: 01000011 01001111 01000100 01000101 00100000 01000010 01010010 01000101 01000001 01001011 01000101 01010010</p>
+                                            <p>Convert each to decimal, then to letters. Remember: A=65, B=66, C=67, etc.</p>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section class="lesson-section">
+                                    <h4>Competition Tips & Tricks</h4>
+                                    <div class="tips-grid">
+                                        <div class="tip">
+                                            <i class="fas fa-calculator"></i>
+                                            <h5>Quick Conversion</h5>
+                                            <p>Learn common patterns: 01000001=A, 01000010=B. Each letter increases by 1!</p>
+                                        </div>
+                                        <div class="tip">
+                                            <i class="fas fa-scissors"></i>
+                                            <h5>Group Strategy</h5>
+                                            <p>Always count in groups of 8. If you get 7 or 9 digits, recheck your grouping!</p>
+                                        </div>
+                                        <div class="tip">
+                                            <i class="fas fa-eye"></i>
+                                            <h5>Pattern Recognition</h5>
+                                            <p>Space (00100000) is common between words. Look for this pattern to separate words.</p>
+                                        </div>
+                                        <div class="tip">
+                                            <i class="fas fa-clock"></i>
+                                            <h5>Speed Method</h5>
+                                            <p>For uppercase letters, look at the last 5 bits after '010'. A=00001, B=00010, C=00011, etc.</p>
+                                        </div>
+                                        <div class="tip">
+                                            <i class="fas fa-list-ol"></i>
+                                            <h5>Common Values</h5>
+                                            <p>Memorize: A=65, E=69, I=73, O=79, U=85, Space=32. These appear frequently!</p>
+                                        </div>
+                                        <div class="tip">
+                                            <i class="fas fa-check-double"></i>
+                                            <h5>Double Check</h5>
+                                            <p>Verify by converting your answer back to binary. Does it match the original?</p>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section class="lesson-section">
+                                    <h4>Advanced: Working with Numbers and Symbols</h4>
+                                    <p>In some competitions, you might encounter numbers (0-9 = ASCII 48-57) or symbols:</p>
+                                    <div class="advanced-ascii">
+                                        <div class="ascii-row">
+                                            <span>'0'</span>
+                                            <span>48</span>
+                                            <span>00110000</span>
+                                        </div>
+                                        <div class="ascii-row">
+                                            <span>'1'</span>
+                                            <span>49</span>
+                                            <span>00110001</span>
+                                        </div>
+                                        <div class="ascii-row">
+                                            <span>'!'</span>
+                                            <span>33</span>
+                                            <span>00100001</span>
+                                        </div>
+                                        <div class="ascii-row">
+                                            <span>'?'</span>
+                                            <span>63</span>
+                                            <span>00111111</span>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section class="lesson-section">
+                                    <h4>Ready to Practice?</h4>
+                                    <p>Now that you understand binary code, head to the Practice tab to test your skills with various difficulty levels!</p>
+                                    <button class="start-practice-btn" onclick="switchTab('practice')">
+                                        <i class="fas fa-play"></i> Start Practicing Binary Code
+                                    </button>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="static/js/script.js"></script>
+    <script>
+        // Ensure tab switching works
+        function switchTab(tabName) {
+            // Update active tab button
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
+
+            // Update active tab content
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.getElementById(`${tabName}-tab`).classList.add('active');
+        }
+
+        // Set up tab event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const tabName = e.target.closest('.tab-btn').dataset.tab;
+                    switchTab(tabName);
+                });
+            });
+
+            // Tutorial navigation
+            document.querySelectorAll('.tutorial-btn:not(.disabled)').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const tutorialName = e.target.closest('.tutorial-btn').dataset.tutorial;
+                    switchTutorial(tutorialName);
+                });
+            });
+
+            // Binary tutorial practice
+            const binaryPracticeBtn = document.getElementById('check-binary-practice');
+            if (binaryPracticeBtn) {
+                binaryPracticeBtn.addEventListener('click', () => {
+                    const input = document.getElementById('binary-practice-input');
+                    const result = document.getElementById('binary-practice-result');
+                    const hint = document.getElementById('binary-hint');
+                    
+                    if (!input || !result) return;
+
+                    const userAnswer = input.value.trim().toUpperCase();
+                    const correctAnswer = 'CODE BREAKER';
+                    
+                    result.classList.remove('correct', 'incorrect');
+                    
+                    if (userAnswer === correctAnswer) {
+                        result.textContent = '🎉 Excellent! The binary code decodes to "CODE BREAKER"!';
+                        result.classList.add('correct');
+                        if (hint) hint.style.display = 'none';
+                    } else {
+                        result.textContent = '❌ Not quite right. Try breaking the binary into 8-bit groups first!';
+                        result.classList.add('incorrect');
+                        if (hint) hint.style.display = 'block';
+                    }
+                });
+            }
+
+            // Enter key support for binary practice
+            const binaryInput = document.getElementById('binary-practice-input');
+            if (binaryInput) {
+                binaryInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        document.getElementById('check-binary-practice').click();
+                    }
+                });
+            }
+        });
+
+        function switchTutorial(tutorialName) {
+            // Update active tutorial button
+            document.querySelectorAll('.tutorial-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`[data-tutorial="${tutorialName}"]`).classList.add('active');
+
+            // Update active tutorial content
+            document.querySelectorAll('.tutorial-lesson').forEach(lesson => {
+                lesson.classList.remove('active');
+            });
+            const targetLesson = document.getElementById(`${tutorialName}-tutorial`);
+            if (targetLesson) {
+                targetLesson.classList.add('active');
+            }
+        }
+    </script>
+
+    <style>
+        /* Additional styles for binary tutorial */
+        .binary-demo {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+
+        .binary-positions {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .position {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: white;
+            padding: 8px 6px;
+            border-radius: 4px;
+            border: 2px solid #e0e7ff;
+            min-width: 50px;
+        }
+
+        .bit-value {
+            font-weight: 600;
+            color: #4f46e5;
+            font-size: 14px;
+        }
+
+        .bit-power {
+            font-size: 11px;
+            color: #6b7280;
+            margin-top: 2px;
+        }
+
+        .binary-breakdown {
+            display: flex;
+            gap: 4px;
+            justify-content: center;
+            margin: 10px 0;
+        }
+
+        .bit {
+            background: #4f46e5;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+        }
+
+        .ascii-table {
+            background: #f8f9fa;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 15px 0;
+        }
+
+        .ascii-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 2fr;
+            padding: 12px 15px;
+            border-bottom: 1px solid #e5e7eb;
+            text-align: center;
+        }
+
+        .ascii-row.header {
+            background: #4f46e5;
+            color: white;
+            font-weight: 600;
+        }
+
+        .ascii-row:nth-child(even):not(.header) {
+            background: white;
+        }
+
+        .ascii-note {
+            font-style: italic;
+            color: #6b7280;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .decoding-steps {
+            background: #f0f9ff;
+            border-left: 4px solid #0ea5e9;
+            padding: 20px;
+            margin: 15px 0;
+        }
+
+        .step-example {
+            background: #fef3c7;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .decode-step {
+            display: flex;
+            align-items: center;
+            margin: 8px 0;
+            gap: 10px;
+        }
+
+        .step-num {
+            background: #f59e0b;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .step-text code {
+            background: #1f2937;
+            color: #f9fafb;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .advanced-ascii {
+            background: #fef7ff;
+            border: 1px solid #e879f9;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .difficulty.intermediate {
+            background: #f59e0b;
+            color: white;
+        }
+
+        .practice-hint {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+
+        .practice-hint p {
+            margin: 5px 0;
+            color: #856404;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .binary-positions {
+                gap: 4px;
+            }
+            
+            .position {
+                min-width: 40px;
+                padding: 6px 4px;
+            }
+            
+            .bit-value {
+                font-size: 12px;
+            }
+            
+            .bit-power {
+                font-size: 9px;
+            }
+
+            .ascii-row {
+                grid-template-columns: 1fr 1fr 1.5fr;
+                padding: 8px 10px;
+                font-size: 14px;
+            }
+
+            .tips-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html>

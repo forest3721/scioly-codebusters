@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morse Code Tutorial - Science Olympiad Code Breaker Practice</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="header-left">
+                    <h1><i class="fas fa-unlock-alt"></i> Science Olympiad Code Breaker Practice</h1>
+                    <p>Master cipher decoding and cryptography for Science Olympiad middle school competitions. Practice Caesar, Morse, and advanced codes!</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <!-- Tab Navigation -->
+            <div class="tab-navigation">
+                <button class="tab-btn" data-tab="practice">
+                    <i class="fas fa-gamepad"></i> Practice
+                </button>
+                <button class="tab-btn active" data-tab="tutorials">
+                    <i class="fas fa-graduation-cap"></i> Cipher 101
+                </button>
+            </div>
+
+            <!-- Practice Tab Content -->
+            <div class="tab-content" id="practice-tab">
+                <div class="cipher-selection">
+                    <h2>Choose Your Science Olympiad Cipher Practice</h2>
+                    <p class="cipher-intro">Select from popular Science Olympiad Code Breaker ciphers used in middle school competitions:</p>
+                    <div class="cipher-grid">
+                        <button class="cipher-btn" data-cipher="caesar">
+                            <i class="fas fa-exchange-alt"></i>
+                            <span>Caesar Cipher</span>
+                            <small>Shift cipher - perfect for beginners</small>
+                        </button>
+                        <button class="cipher-btn active" data-cipher="morse">
+                            <i class="fas fa-dot-circle"></i>
+                            <span>Morse Code</span>
+                            <small>Dots and dashes communication</small>
+                        </button>
+                        <button class="cipher-btn" data-cipher="binary">
+                            <i class="fas fa-calculator"></i>
+                            <span>Binary Code</span>
+                            <small>ASCII binary representation</small>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="practice-area">
+                    <div class="cipher-info">
+                        <h3 id="cipher-name">Morse Code</h3>
+                        <p id="cipher-description">Convert letters to dots (.) and dashes (-) with spaces between letters.</p>
+                    </div>
+
+                    <div class="cipher-controls">
+                        <div class="control-group">
+                            <label for="difficulty">Difficulty:</label>
+                            <select id="difficulty">
+                                <option value="easy">Easy (3-5 letters)</option>
+                                <option value="medium" selected>Medium (6-10 letters)</option>
+                                <option value="hard">Hard (11-15 letters)</option>
+                            </select>
+                        </div>
+                        <button id="generate-btn" class="generate-btn">
+                            <i class="fas fa-random"></i> Generate New Code
+                        </button>
+                    </div>
+
+                    <div class="code-display">
+                        <h4>Encoded Message:</h4>
+                        <div class="encoded-text" id="encoded-text">
+                            Click "Generate New Code" to start!
+                        </div>
+                    </div>
+
+                    <div class="decode-section">
+                        <h4>Your Decoded Answer:</h4>
+                        <div class="input-group">
+                            <input type="text" id="decoded-input" placeholder="Enter your decoded text here..." maxlength="50">
+                            <button id="check-btn" class="check-btn">
+                                <i class="fas fa-check"></i> Check Answer
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="result" id="result">
+                        <!-- Result will be displayed here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tutorials Tab Content -->
+            <div class="tab-content active" id="tutorials-tab">
+                <div class="tutorials-section">
+                    <h2><i class="fas fa-graduation-cap"></i> Cipher 101 Tutorials</h2>
+                    <p class="tutorials-intro">Learn the fundamentals of each cipher with step-by-step tutorials designed for Science Olympiad competition success.</p>
+                    
+                    <div class="tutorial-nav">
+                        <button class="tutorial-btn" data-tutorial="caesar">
+                            <i class="fas fa-exchange-alt"></i>
+                            <span>Caesar Cipher</span>
+                            <small>Available Now</small>
+                        </button>
+                        <button class="tutorial-btn active" data-tutorial="morse">
+                            <i class="fas fa-dot-circle"></i>
+                            <span>Morse Code</span>
+                            <small>Available Now</small>
+                        </button>
+                        <button class="tutorial-btn" data-tutorial="binary">
+                            <i class="fas fa-calculator"></i>
+                            <span>Binary Code</span>
+                            <small>Available Now</small>
+                        </button>
+                    </div>
+
+                    <div class="tutorial-content">
+                        <!-- Morse Code Tutorial -->
+                        <div class="tutorial-lesson active" id="morse-tutorial">
+                            <div class="lesson-header">
+                                <h3><i class="fas fa-dot-circle"></i> Morse Code Tutorial</h3>
+                                <div class="lesson-meta">
+                                    <span class="difficulty beginner">Beginner</span>
+                                    <span class="duration">18 minutes</span>
+                                </div>
+                            </div>
+
+                            <div class="lesson-content">
+                                <section class="lesson-section">
+                                    <h4>What is Morse Code?</h4>
+                                    <p>Morse code is a method of transmitting text information as a series of dots and dashes. Developed by Samuel Morse in the 1830s for telegraph communication, it became one of the world's first digital communication systems and remains popular in Science Olympiad CodeBusters competitions.</p>
+                                    
+                                    <div class="example-box">
+                                        <h5>Historical Impact</h5>
+                                        <p>Morse code revolutionized long-distance communication! Before its invention, messages took days or weeks to travel across countries. With Morse code and telegraph lines, messages could be sent instantly across continents.</p>
+                                    </div>
+                                </section>
+
+                                <section class="lesson-section">
+                                    <h4>How Does Morse Code Work?</h4>
+                                    <p>Morse code uses two basic elements to represent letters and numbers:</p>
+                                    <ul>
+                                        <li><strong>Dot (·)</strong> - A short signal, often written as a period</li>
+                                        <li><strong>Dash (−)</strong> - A long signal, often written as a hyphen</li>
+                                    </ul>
+
+                                    <div class="morse-basics">
+                                        <h5>Basic Timing Rules:</h5>
+                                        <div class="timing-rules">
+                                            <div class="rule">
+                                                <span class="rule-symbol">·</span>
+                                                <span class="rule-text">Dot = 1 time unit</span>
+                                            </div>
+                                            <div class="rule">
+                                                <span class="rule-symbol">−</span>
+                                                <span class="rule-text">Dash = 3 time units</span>
+                                            </div>
+                                            <div class="rule">
+                                                <span class="rule-symbol">space</span>
+                                                <span class="rule-text">Between letters = 3 time units</span>
+                                            </div>
+                                            <div class="rule">
+                                                <span class="rule-symbol">  </span>
+                                                <span class="rule-text">Between words = 7 time units</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="word-example">
+                                        <h5>Example: "SOS" in Morse Code</h5>
+                                        <div class="morse-demo">
+                                            <div class="morse-letter">
+                                                <span class="letter">S</span>
+                                                <span class="morse">· · ·</span>
+                                            </div>
+                                            <div class="morse-letter">
+                                                <span class="letter">O</span>
+                                                <span class="morse">− − −</span>
+                                            </div>
+                                            <div class="morse-letter">
+                                                <span class="letter">S</span>
+                                                <span class="morse">· · ·</span>
+                                            </div>
+                                        </div>
+                                        <p class="morse-result">Result: <strong>· · · − − − · · ·</strong></p>
+                                    </div>
+                                </section>
+
+                                <section class="lesson-section">
+                                    <h4>The Morse Code Alphabet</h4>
+                                    <p>Here's the complete Morse code alphabet you'll need for competitions:</p>
+                                    
+                                    <div class="morse-alphabet">
+                                        <div class="alphabet-section">
+                                            <h5>Letters A-M</h5>
+                                            <div class="morse-grid">
+                                                <div class="morse-char"><span class="char">A</span><span class="code">· −</span></div>
+                                                <div class="morse-char"><span class="char">B</span><span class="code">− · · ·</span></div>
+                                                <div class="morse-char"><span class="char">C</span><span class="code">− · − ·</span></div>
+                                                <div class="morse-char"><span class="char">D</span><span class="code">− · ·</span></div>
+                                                <div class="morse-char"><span class="char">E</span><span class="code">·</span></div>
+                                                <div class="morse-char"><span class="char">F</span><span class="code">· · − ·</span></div>
+                                                <div class="morse-char"><span class="char">G</span><span class="code">− − ·</span></div>
+                                                <div class="morse-char"><span class="char">H</span><span class="code">· · · ·</span></div>
+                                                <div class="morse-char"><span class="char">I</span><span class="code">· ·</span></div>
+                                                <div class="morse-char"><span class="char">J</span><span class="code">· − − −</span></div>
+                                                <div class="morse-char"><span class="char">K</span><span class="code">− · −</span></div>
+                                                <div class="morse-char"><span class="char">L</span><span class="code">· − · ·</span></div>
+                                                <div class="morse-char"><span class="char">M</span><span class="code">− −</span></div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="alphabet-section">
+                                            <h5>Letters N-Z</h5>
+                                            <div class="morse-grid">
+                                                <div class="morse-char"><span class="char">N</span><span class="code">− ·</span></div>
+                                                <div class="morse-char"><span class="char">O</span><span class="code">− − −</span></div>
+                                                <div class="morse-char"><span class="char">P</span><span class="code">· − − ·</span></div>
+                                                <div class="morse-char"><span class="char">Q</span><span class="code">− − · −</span></div>
+                                                <div class="morse-char"><span class="char">R</span><span class="code">· − ·</span></div>
+                                                <div class="morse-char"><span class="char">S</span><span class="code">· · ·</span></div>
+                                                <div class="morse-char"><span class="char">T</span><span class="code">−</span></div>
+                                                <div class="morse-char"><span class="char">U</span><span class="code">· · −</span></div>
+                                                <div class="morse-char"><span class="char">V</span><span class="code">· · · −</span></div>
+                                                <div class="morse-char"><span class="char">W</span><span class="code">· − −</span></div>
+                                                <div class="morse-char"><span class="char">X</span><span class="code">− · · −</span></div>
+                                                <div class="morse-char"><span class="char">Y</span><span class="code">− · − −</span></div>
+                                                <div class="morse-char"><span class="char">Z</span><span class="code">− − · ·</span></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="alphabet-section">
+                                            <h5>Numbers 0-9</h5>
+                                            <div class="morse-grid numbers">
+                                                <div class="morse-char"><span class="char">0</span><span class="code">− − − − −</span></div>
+                                                <div class="morse-char"><span class="char">1</span><span class="code">· − − − −</span></div>
+                                                <div class="morse-char"><span class="char">2</span><span class="code">· · − − −</span></div>
+                                                <div class="morse-char"><span class="char">3</span><span class="code">· · · − −</span></div>
+                                                <div class="morse-char"><span class="char">4</span><span class="code">· · · · −</span></div>
+                                                <div class="morse-char"><span class="char">5</span><span class="code">· · · · ·</span></div>
+                                                <div class="morse-char"><span class="char">6</span><span class="code">− · · · ·</span></div>
+                                                <div class="morse-char"><span class="char">7</span><span class="code">− − · · ·</span></div>
+                                                <div class="morse-char"><span class="char">8</span><span class="code">− − − · ·</span></div>
+                                                <div class="morse-char"><span class="char">9</span><span class="code">− − − − ·</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section class="lesson-section">
+                                    <h4>Memory Tricks & Patterns</h4>
+                                    <p>Professional Morse operators use these memory aids to learn the code faster:</p>
+                                    
+                                    <div class="memory-tricks">
+                                        <div class="trick-category">
+                                            <h5>Word Association Method</h5>
+                                            <div class="trick-examples">
+                                                <div class="trick">
+                                                    <span class="trick-letter">A (· −)</span>
+                                                    <span class="trick-word">"A-bout" (short-long)</span>
+                                                </div>
+                                                <div class="trick">
+                                                    <span class="trick-letter">N (− ·)</span>
+                                                    <span class="trick-word">"NA-vy" (long-short)</span>
+                                                </div>
+                                                <div class="trick">
+                                                    <span class="trick-letter">S (· · ·)</span>
+                                                    <span class="trick-word">"Si-si-si" (short-short-short)</span>
+                                                </div>
+                                                <div class="trick">
+                                                    <span class="trick-letter">O (− − −)</span>
+                                                    <span class="trick-word">"OH-MY-GOD" (long-long-long)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="trick-category">
+                                            <h5>Number Patterns</h5>
+                                            <div class="pattern-explanation">
+                                                <p><strong>Numbers 1-5:</strong> Start with dots, end with dashes</p>
+                                                <p><strong>Numbers 6-0:</strong> Start with dashes, end with dots</p>
+                                                <p><strong>Number 5:</strong> Five dots (· · · · ·) - easy to remember!</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="trick-category">
+                                            <h5>Common Letter Patterns</h5>
+                                            <div class="common-letters">
+                                                <div class="common">
+                                                    <span class="freq-letter">E</span>
+                                                    <span class="freq-morse">·</span>
+                                                    <span class="freq-note">Most common letter, shortest code</span>
+                                                </div>
+                                                <div class="common">
+                                                    <span class="freq-letter">T</span>
+                                                    <span class="freq-morse">−</span>
+                                                    <span class="freq-note">Second most common, one dash</span>
+                                                </div>
+                                                <div class="common">
+                                                    <span class="freq-letter">I</span>
+                                                    <span class="freq-morse">· ·</span>
+                                                    <span class="freq-note">Two dots, like "i i"</span>
+                                                </div>
+                                                <div class="common">
+                                                    <span class="freq-letter">M</span>
+                                                    <span class="freq-morse">− −</span>
+                                                    <span class="freq-note">Two dashes, like "mmm"</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section class="lesson-section">
+                                    <h4>Step-by-Step Decoding Process</h4>
+                                    <ol class="decoding-steps">
+                                        <li><strong>Identify spaces:</strong> Find gaps between letters and words</li>
+                                        <li><strong>Break into groups:</strong> Separate each letter's morse code</li>
+                                        <li><strong>Convert each group:</strong> Look up each morse pattern</li>
+                                        <li><strong>Combine letters:</strong> Put letters together to form words</li>
+                                    </ol>
+
+                                    <div class="step-example">
+                                        <h5>Example: Decode "· · ·  − − −  · · ·"</h5>
+                                        <div class="decode-step">
+                                            <span class="step-num">1.</span>
+                                            <span class="step-text">Identify: Single spaces between letters, double space between words</span>
+                                        </div>
+                                        <div class="decode-step">
+                                            <span class="step-num">2.</span>
+                                            <span class="step-text">Break: <code>· · ·</code> | <code>− − −</code> | <code>· · ·</code></span>
+                                        </div>
+                                        <div class="decode-step">
+                                            <span class="step-num">3.</span>
+                                            <span class="step-text">Convert: · · · = S, − − − = O, · · · = S</span>
+                                        </div>
+                                        <div class="decode-step">
+                                            <span class="step-num">4.</span>
+                                            <span class="step-text">Result: <strong>SOS</strong></span>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section class="lesson-section">
+                                    <h4>Practice Time!</h4>
+                                    <p>Try decoding this morse code message:</p>
+                                    
+                                    <div class="practice-box">
+                                        <div class="cipher-text morse-practice">
+                                            − · − ·  − − −  − · ·  ·
+                                        </div>
+                                        <div class="practice-controls">
+                                            <input type="text" id="morse-practice-input" placeholder="Enter your answer..." maxlength="10">
+                                            <button id="check-morse-practice" class="practice-btn">Check Answer</button>
+                                        </div>
+                                        <div id="morse-practice-result" class="practice-result"></div>
+                                        <div class="practice-hint" id="morse-hint" style="display: none;">
+                                            <p><strong>Hint:</strong> Break it down letter by letter:</p>
+                                            <p>− · − · = C, − − − = O, − · · = D, · = E</p>
+                                            <p>What do these letters spell?</p>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section class="lesson-section">
+                                    <h4>Competition Tips & Strategies</h4>
+                                    <div class="tips-grid">
+                                        <div class="tip">
+                                            <i class="fas fa-eye"></i>
+                                            <h5>Spacing is Key</h5>
+                                            <p>Pay careful attention to spacing - single spaces separate letters, larger gaps separate words</p>
+                                        </div>
+                                        <div class="tip">
+                                            <i class="fas fa-bolt"></i>
+                                            <h5>Start with Short Codes</h5>
+                                            <p>E (·) and T (−) are fastest to identify. Find these first to get oriented</p>
+                                        </div>
+                                        <div class="tip">
+                                            <i class="fas fa-brain"></i>
+                                            <h5>Use Context Clues</h5>
+                                            <p>If you know some letters, guess the word! Common words help solve the rest</p>
+                                        </div>
+                                        <div class="tip">
+                                            <i class="fas fa-list"></i>
+                                            <h5>Write It Out</h5>
+                                            <p>Jot down your morse alphabet reference - it's faster than memorizing everything</p>
+                                        </div>
+                                        <div class="tip">
+                                            <i class="fas fa-search"></i>
+                                            <h5>Pattern Recognition</h5>
+                                            <p>Look for repeated patterns - they're likely the same letter appearing multiple times</p>
+                                        </div>
+                                        <div class="tip">
+                                            <i class="fas fa-clock"></i>
+                                            <h5>Practice Speed</h5>
+                                            <p>Time yourself! Science Olympiad competitions are often timed events</p>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section class="lesson-section">
+                                    <h4>Advanced: Numbers and Punctuation</h4>
+                                    <p>Some competitions include numbers and punctuation marks. Here are the most common ones:</p>
+                                    
+                                    <div class="advanced-morse">
+                                        <div class="punct-section">
+                                            <h5>Common Punctuation</h5>
+                                            <div class="punct-grid">
+                                                <div class="punct-char"><span class="char">Period (.)</span><span class="code">· − · − · −</span></div>
+                                                <div class="punct-char"><span class="char">Comma (,)</span><span class="code">− − · · − −</span></div>
+                                                <div class="punct-char"><span class="char">Question (?)</span><span class="code">· · − − · ·</span></div>
+                                                <div class="punct-char"><span class="char">Slash (/)</span><span class="code">− · · − ·</span></div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="prosign-section">
+                                            <h5>Special Morse Prosigns</h5>
+                                            <div class="prosign-note">
+                                                <p><strong>Prosigns</strong> are special morse code combinations sent as single units:</p>
+                                                <ul>
+                                                    <li><strong>AR (· − · − ·)</strong> - End of message</li>
+                                                    <li><strong>SK (· · · − · −)</strong> - End of transmission</li>
+                                                    <li><strong>BT (− · · · −)</strong> - Paragraph break</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section class="lesson-section">
+                                    <h4>Ready to Practice?</h4>
+                                    <p>Now that you understand Morse code, head to the Practice tab to test your skills with various difficulty levels!</p>
+                                    <button class="start-practice-btn" onclick="switchTab('practice')">
+                                        <i class="fas fa-play"></i> Start Practicing Morse Code
+                                    </button>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="static/js/script.js"></script>
+    <script>
+        // Ensure tab switching works
+        function switchTab(tabName) {
+            // Update active tab button
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
+
+            // Update active tab content
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.getElementById(`${tabName}-tab`).classList.add('active');
+        }
+
+        // Set up tab event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const tabName = e.target.closest('.tab-btn').dataset.tab;
+                    switchTab(tabName);
+                });
+            });
+
+            // Tutorial navigation
+            document.querySelectorAll('.tutorial-btn:not(.disabled)').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const tutorialName = e.target.closest('.tutorial-btn').dataset.tutorial;
+                    switchTutorial(tutorialName);
+                });
+            });
+
+            // Morse tutorial practice
+            const morsePracticeBtn = document.getElementById('check-morse-practice');
+            if (morsePracticeBtn) {
+                morsePracticeBtn.addEventListener('click', () => {
+                    const input = document.getElementById('morse-practice-input');
+                    const result = document.getElementById('morse-practice-result');
+                    const hint = document.getElementById('morse-hint');
+                    
+                    if (!input || !result) return;
+
+                    const userAnswer = input.value.trim().toUpperCase();
+                    const correctAnswer = 'CODE';
+                    
+                    result.classList.remove('correct', 'incorrect');
+                    
+                    if (userAnswer === correctAnswer) {
+                        result.textContent = '🎉 Perfect! The morse code decodes to "CODE"!';
+                        result.classList.add('correct');
+                        if (hint) hint.style.display = 'none';
+                    } else {
+                        result.textContent = '❌ Not quite right. Try breaking it down letter by letter!';
+                        result.classList.add('incorrect');
+                        if (hint) hint.style.display = 'block';
+                    }
+                });
+            }
+
+            // Enter key support for morse practice
+            const morseInput = document.getElementById('morse-practice-input');
+            if (morseInput) {
+                morseInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        document.getElementById('check-morse-practice').click();
+                    }
+                });
+            }
+        });
+
+        function switchTutorial(tutorialName) {
+            // Update active tutorial button
+            document.querySelectorAll('.tutorial-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`[data-tutorial="${tutorialName}"]`).classList.add('active');
+
+            // Update active tutorial content
+            document.querySelectorAll('.tutorial-lesson').forEach(lesson => {
+                lesson.classList.remove('active');
+            });
+            const targetLesson = document.getElementById(`${tutorialName}-tutorial`);
+            if (targetLesson) {
+                targetLesson.classList.add('active');
+            }
+        }
+    </script>
+
+    <style>
+        /* Additional styles for morse tutorial */
+        .morse-basics {
+            background: #f0f9ff;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+
+        .timing-rules {
+            display: grid;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .rule {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: white;
+            padding: 10px 15px;
+            border-radius: 6px;
+            border-left: 4px solid #0ea5e9;
+        }
+
+        .rule-symbol {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            font-size: 18px;
+            color: #0ea5e9;
+            min-width: 40px;
+            text-align: center;
+        }
+
+        .rule-text {
+            color: #374151;
+            font-weight: 500;
+        }
+
+        .morse-demo {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .morse-letter {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border: 2px solid #e5e7eb;
+            min-width: 80px;
+        }
+
+        .morse-letter .letter {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4f46e5;
+            margin-bottom: 8px;
+        }
+
+        .morse-letter .morse {
+            font-family: 'Courier New', monospace;
+            font-size: 18px;
+            color: #1f2937;
+            font-weight: bold;
+        }
+
+        .morse-result {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 18px;
+        }
+
+        .morse-alphabet {
+            margin: 20px 0;
+        }
+
+        .alphabet-section {
+            margin-bottom: 25px;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .alphabet-section h5 {
+            color: #4f46e5;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .morse-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 8px;
+        }
+
+        .morse-grid.numbers {
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        }
+
+        .morse-char {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid #e5e7eb;
+            font-family: 'Courier New', monospace;
+        }
+
+        .morse-char .char {
+            font-weight: bold;
+            color: #4f46e5;
+            font-size: 16px;
+        }
+
+        .morse-char .code {
+            color: #1f2937;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .memory-tricks {
+            background: #fef3c7;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+
+        .trick-category {
+            margin-bottom: 20px;
+        }
+
+        .trick-category h5 {
+            color: #d97706;
+            margin-bottom: 12px;
+        }
+
+        .trick-examples {
+            display: grid;
+            gap: 8px;
+        }
+
+        .trick {
+            display: flex;
+            gap: 15px;
+            background: white;
+            padding: 8px 12px;
+            border-radius: 4px;
+            border-left: 3px solid #f59e0b;
+        }
+
+        .trick-letter {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            color: #d97706;
+            min-width: 80px;
+        }
+
+        .trick-word {
+            color: #374151;
+            font-style: italic;
+        }
+
+        .pattern-explanation {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 3px solid #f59e0b;
+        }
+
+        .pattern-explanation p {
+            margin: 5px 0;
+            color: #374151;
+        }
+
+        .common-letters {
+            display: grid;
+            gap: 8px;
+        }
+
+        .common {
+            display: grid;
+            grid-template-columns: 30px 50px 1fr;
+            gap: 15px;
+            align-items: center;
+            background: white;
+            padding: 10px 15px;
+            border-radius: 4px;
+            border-left: 3px solid #f59e0b;
+        }
+
+        .freq-letter {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            color: #d97706;
+            font-size: 18px;
+        }
+
+        .freq-morse {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            color: #1f2937;
+            font-size: 16px;
+        }
+
+        .freq-note {
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        .step-example {
+            background: #ecfdf5;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #10b981;
+        }
+
+        .decode-step {
+            display: flex;
+            align-items: center;
+            margin: 8px 0;
+            gap: 10px;
+        }
+
+        .step-num {
+            background: #10b981;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .step-text code {
+            background: #1f2937;
+            color: #f9fafb;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .morse-practice {
+            font-family: 'Courier New', monospace;
+            font-size: 24px;
+            letter-spacing: 2px;
+            font-weight: bold;
+            color: #1f2937;
+        }
+
+        .advanced-morse {
+            background: #fef7ff;
+            border: 1px solid #e879f9;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+
+        .punct-section, .prosign-section {
+            margin-bottom: 20px;
+        }
+
+        .punct-section h5, .prosign-section h5 {
+            color: #a855f7;
+            margin-bottom: 12px;
+        }
+
+        .punct-grid {
+            display: grid;
+            gap: 8px;
+        }
+
+        .punct-char {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            padding: 10px 15px;
+            border-radius: 4px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .punct-char .char {
+            font-weight: 500;
+            color: #a855f7;
+        }
+
+        .punct-char .code {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            color: #1f2937;
+        }
+
+        .prosign-note {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 3px solid #a855f7;
+        }
+
+        .prosign-note p {
+            margin: 8px 0;
+            color: #374151;
+        }
+
+        .prosign-note ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        .prosign-note li {
+            margin: 5px 0;
+            color: #374151;
+        }
+
+        .prosign-note strong {
+            color: #a855f7;
+            font-family: 'Courier New', monospace;
+        }
+
+        .practice-hint {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+
+        .practice-hint p {
+            margin: 5px 0;
+            color: #856404;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .morse-demo {
+                gap: 15px;
+            }
+            
+            .morse-letter {
+                min-width: 60px;
+                padding: 10px;
+            }
+            
+            .morse-letter .letter {
+                font-size: 20px;
+            }
+            
+            .morse-letter .morse {
+                font-size: 14px;
+            }
+
+            .morse-grid {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+                gap: 6px;
+            }
+
+            .morse-grid.numbers {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            }
+
+            .morse-char {
+                padding: 6px 8px;
+                font-size: 12px;
+            }
+
+            .rule {
+                gap: 10px;
+                padding: 8px 12px;
+            }
+
+            .rule-symbol {
+                font-size: 16px;
+                min-width: 30px;
+            }
+
+            .common {
+                grid-template-columns: 25px 40px 1fr;
+                gap: 10px;
+                padding: 8px 12px;
+            }
+
+            .tips-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html>

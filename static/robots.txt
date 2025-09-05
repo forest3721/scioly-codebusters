@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+Allow: /static/
+
+# Disallow private areas
+Disallow: /dashboard
+Disallow: /login
+Disallow: /logout
+Disallow: /api/
+
+# Allow search engines to index main content
+Allow: /static/css/
+Allow: /static/js/
+Allow: /static/images/
+
+# Sitemap location
+Sitemap: https://snr0-154605.uc.r.appspot.com/sitemap.xml
+
+# Crawl delay for politeness
+Crawl-delay: 1

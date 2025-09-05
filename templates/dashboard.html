@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science Olympiad Code Breaker Dashboard - Track Your Cipher Practice Progress | Scioly</title>
+    <meta name="description" content="Monitor your Science Olympiad Code Breaker practice progress. View cipher statistics, leaderboard rankings, and track your middle school competition readiness.">
+    <meta name="keywords" content="science olympiad dashboard, scioly progress, code breaker statistics, cipher practice tracking, middle school competition prep">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="header-left">
+                    <h1><i class="fas fa-chart-line"></i> Science Olympiad Code Breaker Dashboard</h1>
+                    <p>Welcome back, {{ current_user.name }}! Track your cipher practice progress and competition readiness.</p>
+                </div>
+                <div class="header-right">
+                    <div class="user-profile">
+                        <img src="{{ current_user.picture }}" alt="Profile" class="profile-pic">
+                        <span class="user-name">{{ current_user.name }}</span>
+                        <div class="user-menu">
+                            <a href="{{ url_for('index') }}" class="menu-item">
+                                <i class="fas fa-gamepad"></i> Practice
+                            </a>
+                            <a href="{{ url_for('logout') }}" class="menu-item">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <div class="dashboard-grid">
+                <!-- Profile Section -->
+                <div class="dashboard-card profile-section">
+                    <h2><i class="fas fa-user"></i> Profile</h2>
+                    <form id="profile-form">
+                        <div class="profile-info">
+                            <img id="profile-pic-preview" src="{{ current_user.picture }}" alt="Profile" class="large-profile-pic">
+                            <div class="profile-details">
+                                <label for="profile-name">Name:</label>
+                                <input type="text" id="profile-name" name="name" value="{{ current_user.name }}" required>
+                                <label for="profile-picture">Picture URL:</label>
+                                <input type="url" id="profile-picture" name="picture" value="{{ current_user.picture }}">
+                                <label for="profile-image-upload">Or upload image (max 2MB, JPG/PNG):</label>
+                                <input type="file" id="profile-image-upload" accept="image/png, image/jpeg">
+                                <small id="upload-status" style="display:block;margin-bottom:8px;"></small>
+                                <p><i class="fas fa-envelope"></i> {{ current_user.email }}</p>
+                                <p><i class="fas fa-calendar"></i> Member since {{ current_user.created_at.strftime('%B %Y') }}</p>
+                                <p><i class="fas fa-clock"></i> Last login: {{ current_user.last_login.strftime('%B %d, %Y') }}</p>
+                                <button type="submit" class="save-btn"><i class="fas fa-save"></i> Save Profile</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Statistics Section -->
+                <div class="dashboard-card stats-section">
+                    <h2><i class="fas fa-trophy"></i> Statistics</h2>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number">{{ current_user.total_attempts }}</div>
+                            <div class="stat-label">Total Attempts</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">{{ current_user.correct_answers }}</div>
+                            <div class="stat-label">Correct Answers</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">{{ accuracy }}%</div>
+                            <div class="stat-label">Accuracy</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">{{ current_user.favorite_cipher or 'None' }}</div>
+                            <div class="stat-label">Favorite Cipher</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Preferences Section -->
+                <div class="dashboard-card preferences-section">
+                    <h2><i class="fas fa-cog"></i> Preferences</h2>
+                    <form id="preferences-form">
+                        <div class="preference-item">
+                            <label for="difficulty">Default Difficulty:</label>
+                            <select id="difficulty" name="difficulty_preference">
+                                <option value="easy" {% if current_user.difficulty_preference == 'easy' %}selected{% endif %}>Easy</option>
+                                <option value="medium" {% if current_user.difficulty_preference == 'medium' %}selected{% endif %}>Medium</option>
+                                <option value="hard" {% if current_user.difficulty_preference == 'hard' %}selected{% endif %}>Hard</option>
+                            </select>
+                        </div>
+                        <div class="preference-item">
+                            <label>
+                                <input type="checkbox" name="show_hints" {% if current_user.show_hints %}checked{% endif %}>
+                                Show hints by default
+                            </label>
+                        </div>
+                        <div class="preference-item">
+                            <label>
+                                <input type="checkbox" name="auto_advance" {% if current_user.auto_advance %}checked{% endif %}>
+                                Auto-advance after correct answers
+                            </label>
+                        </div>
+                        <div class="preference-item">
+                            <label for="theme">Theme:</label>
+                            <select id="theme" name="theme">
+                                <option value="default" {% if current_user.theme == 'default' %}selected{% endif %}>Default</option>
+                                <option value="dark" {% if current_user.theme == 'dark' %}selected{% endif %}>Dark</option>
+                                <option value="high-contrast" {% if current_user.theme == 'high-contrast' %}selected{% endif %}>High Contrast</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="save-btn">
+                            <i class="fas fa-save"></i> Save Preferences
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Leaderboard Section -->
+                <div class="dashboard-card leaderboard-section">
+                    <h2><i class="fas fa-medal"></i> Leaderboard</h2>
+                    <div id="leaderboard-content">
+                        <div class="loading">Loading leaderboard...</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="quick-actions">
+                <a href="{{ url_for('index') }}" class="action-btn primary">
+                    <i class="fas fa-play"></i> Start Practice
+                </a>
+                <button class="action-btn secondary" onclick="resetStats()">
+                    <i class="fas fa-redo"></i> Reset Statistics
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Load leaderboard
+        fetch('/api/leaderboard')
+            .then(response => response.json())
+            .then(data => {
+                const leaderboardContent = document.getElementById('leaderboard-content');
+                if (data.length === 0) {
+                    leaderboardContent.innerHTML = '<p>No data available yet.</p>';
+                    return;
+                }
+                
+                let html = '<div class="leaderboard-list">';
+                data.forEach((user, index) => {
+                    const medal = index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : `${index + 1}.`;
+                    html += `
+                        <div class="leaderboard-item">
+                            <span class="rank">${medal}</span>
+                            <span class="name">${user.name}</span>
+                            <span class="score">${user.correct_answers} correct</span>
+                            <span class="accuracy">${user.accuracy}%</span>
+                        </div>
+                    `;
+                });
+                html += '</div>';
+                leaderboardContent.innerHTML = html;
+            })
+            .catch(error => {
+                document.getElementById('leaderboard-content').innerHTML = '<p>Error loading leaderboard.</p>';
+            });
+
+        // Handle preferences form
+        document.getElementById('preferences-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = {
+                difficulty_preference: formData.get('difficulty_preference'),
+                show_hints: formData.get('show_hints') === 'on',
+                auto_advance: formData.get('auto_advance') === 'on',
+                theme: formData.get('theme')
+            };
+            
+            fetch('/api/profile', {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Preferences saved successfully!');
+                }
+            })
+            .catch(error => {
+                alert('Error saving preferences.');
+            });
+        });
+
+        // Handle profile form
+        document.getElementById('profile-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = {
+                name: formData.get('name'),
+                picture: formData.get('picture')
+            };
+            
+            fetch('/api/profile', {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Profile updated successfully!');
+                    document.getElementById('profile-pic-preview').src = data.picture;
+                }
+            })
+            .catch(error => {
+                alert('Error updating profile.');
+            });
+        });
+
+        // Handle profile image upload
+        const imageInput = document.getElementById('profile-image-upload');
+        const picPreview = document.getElementById('profile-pic-preview');
+        const uploadStatus = document.getElementById('upload-status');
+        imageInput.addEventListener('change', function() {
+            const file = this.files[0];
+            if (!file) return;
+            if (!['image/jpeg', 'image/png'].includes(file.type)) {
+                uploadStatus.textContent = 'Only JPG and PNG images are allowed.';
+                uploadStatus.style.color = 'red';
+                this.value = '';
+                return;
+            }
+            if (file.size > 2 * 1024 * 1024) {
+                uploadStatus.textContent = 'Image must be less than 2MB.';
+                uploadStatus.style.color = 'red';
+                this.value = '';
+                return;
+            }
+            // Preview
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                picPreview.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+            // Upload
+            const formData = new FormData();
+            formData.append('image', file);
+            fetch('/api/profile/upload_image', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    uploadStatus.textContent = 'Image uploaded!';
+                    uploadStatus.style.color = 'green';
+                    document.getElementById('profile-picture').value = data.url;
+                    picPreview.src = data.url;
+                } else {
+                    uploadStatus.textContent = data.error || 'Upload failed.';
+                    uploadStatus.style.color = 'red';
+                }
+            })
+            .catch(() => {
+                uploadStatus.textContent = 'Upload failed.';
+                uploadStatus.style.color = 'red';
+            });
+        });
+
+        function resetStats() {
+            if (confirm('Are you sure you want to reset your statistics? This action cannot be undone.')) {
+                fetch('/api/stats', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        attempts: -{{ current_user.total_attempts }},
+                        correct: -{{ current_user.correct_answers }}
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    location.reload();
+                })
+                .catch(error => {
+                    alert('Error resetting statistics.');
+                });
+            }
+        }
+    </script>
+</body>
+</html> 

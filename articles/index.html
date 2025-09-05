@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineering Articles - Deep Dive into Computer Science Concepts</title>
+    <meta name="description" content="Comprehensive engineering articles covering computer systems, distributed computing, software engineering, and technology fundamentals. Learn about time systems, network protocols, and more.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <link rel="stylesheet" href="../static/css/articles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="header-left">
+                    <h1><i class="fas fa-cogs"></i> Engineering Articles</h1>
+                    <p>Deep dive into computer science concepts, systems engineering, and software development practices.</p>
+                </div>
+                <div class="header-right">
+                    <a href="../templates/index.html" class="back-link">
+                        <i class="fas fa-arrow-left"></i> Back to Practice
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <div class="articles-intro">
+                <div class="intro-content">
+                    <h2>Welcome to Engineering Articles</h2>
+                    <p class="lead">Explore in-depth technical articles covering fundamental concepts in computer science, systems engineering, and software development. These articles are designed to help you understand complex topics with practical examples and real-world applications.</p>
+                    
+                    <div class="intro-stats">
+                        <div class="stat">
+                            <span class="number">4</span>
+                            <span class="label">Categories</span>
+                        </div>
+                        <div class="stat">
+                            <span class="number">1</span>
+                            <span class="label">Articles</span>
+                        </div>
+                        <div class="stat">
+                            <span class="number">15</span>
+                            <span class="label">Min Read</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="articles-grid">
+                <div class="category-section">
+                    <h2><i class="fas fa-clock"></i> Time & Synchronization</h2>
+                    <p class="category-description">Understanding time coordination in computer systems, from basic clock concepts to distributed system synchronization.</p>
+                    
+                    <div class="articles-list">
+                        <article class="article-card featured">
+                            <div class="article-header">
+                                <div class="article-meta">
+                                    <span class="difficulty intermediate">Intermediate</span>
+                                    <span class="reading-time"><i class="fas fa-clock"></i> 15 min</span>
+                                    <span class="publish-date">August 2025</span>
+                                </div>
+                            </div>
+                            
+                            <div class="article-content">
+                                <h3><a href="time_systems.html">Time Systems & Clock Coordination</a></h3>
+                                <p>Comprehensive guide to GMT, UTC, leap seconds, NTP synchronization, and time coordination in distributed systems. Learn about clock skew, logical timestamps, and practical implications for software development.</p>
+                                
+                                <div class="article-topics">
+                                    <span class="topic">GMT/UTC</span>
+                                    <span class="topic">Leap Seconds</span>
+                                    <span class="topic">Clock Skew</span>
+                                    <span class="topic">NTP</span>
+                                    <span class="topic">Distributed Time</span>
+                                </div>
+                            </div>
+                            
+                            <div class="article-footer">
+                                <a href="time_systems.html" class="read-more">
+                                    Read Article <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="category-section">
+                    <h2><i class="fas fa-microchip"></i> Computer Systems</h2>
+                    <p class="category-description">Explore CPU architecture, memory systems, operating systems, and low-level computing concepts.</p>
+                    
+                    <div class="articles-list">
+                        <article class="article-card coming-soon">
+                            <div class="article-header">
+                                <div class="article-meta">
+                                    <span class="difficulty advanced">Advanced</span>
+                                    <span class="reading-time"><i class="fas fa-clock"></i> 25 min</span>
+                                    <span class="status">Coming Soon</span>
+                                </div>
+                            </div>
+                            
+                            <div class="article-content">
+                                <h3>CPU Architecture & Instruction Sets</h3>
+                                <p>Deep dive into modern processor architectures, instruction pipelines, branch prediction, and performance optimization techniques.</p>
+                                
+                                <div class="article-topics">
+                                    <span class="topic">CPU Design</span>
+                                    <span class="topic">Pipelines</span>
+                                    <span class="topic">Cache Systems</span>
+                                    <span class="topic">Branch Prediction</span>
+                                </div>
+                            </div>
+                            
+                            <div class="article-footer">
+                                <span class="coming-soon-badge">
+                                    <i class="fas fa-calendar-alt"></i> Coming Soon
+                                </span>
+                            </div>
+                        </article>
+
+                        <article class="article-card coming-soon">
+                            <div class="article-header">
+                                <div class="article-meta">
+                                    <span class="difficulty intermediate">Intermediate</span>
+                                    <span class="reading-time"><i class="fas fa-clock"></i> 20 min</span>
+                                    <span class="status">Coming Soon</span>
+                                </div>
+                            </div>
+                            
+                            <div class="article-content">
+                                <h3>Memory Hierarchies & Caching</h3>
+                                <p>Understanding memory systems from CPU caches to virtual memory, including cache coherency and memory management strategies.</p>
+                                
+                                <div class="article-topics">
+                                    <span class="topic">Cache Levels</span>
+                                    <span class="topic">Virtual Memory</span>
+                                    <span class="topic">Memory Management</span>
+                                    <span class="topic">Cache Coherency</span>
+                                </div>
+                            </div>
+                            
+                            <div class="article-footer">
+                                <span class="coming-soon-badge">
+                                    <i class="fas fa-calendar-alt"></i> Coming Soon
+                                </span>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="category-section">
+                    <h2><i class="fas fa-code"></i> Software Engineering</h2>
+                    <p class="category-description">Best practices in software development, testing, version control, and system design principles.</p>
+                    
+                    <div class="articles-list">
+                        <article class="article-card coming-soon">
+                            <div class="article-header">
+                                <div class="article-meta">
+                                    <span class="difficulty beginner">Beginner</span>
+                                    <span class="reading-time"><i class="fas fa-clock"></i> 18 min</span>
+                                    <span class="status">Coming Soon</span>
+                                </div>
+                            </div>
+                            
+                            <div class="article-content">
+                                <h3>Version Control & Git Workflows</h3>
+                                <p>Master Git workflows, branching strategies, merge vs. rebase, and collaborative development best practices.</p>
+                                
+                                <div class="article-topics">
+                                    <span class="topic">Git Workflows</span>
+                                    <span class="topic">Branching</span>
+                                    <span class="topic">Merge Strategies</span>
+                                    <span class="topic">Collaboration</span>
+                                </div>
+                            </div>
+                            
+                            <div class="article-footer">
+                                <span class="coming-soon-badge">
+                                    <i class="fas fa-calendar-alt"></i> Coming Soon
+                                </span>
+                            </div>
+                        </article>
+
+                        <article class="article-card coming-soon">
+                            <div class="article-header">
+                                <div class="article-meta">
+                                    <span class="difficulty intermediate">Intermediate</span>
+                                    <span class="reading-time"><i class="fas fa-clock"></i> 22 min</span>
+                                    <span class="status">Coming Soon</span>
+                                </div>
+                            </div>
+                            
+                            <div class="article-content">
+                                <h3>Testing Strategies & CI/CD</h3>
+                                <p>Comprehensive guide to testing methodologies, continuous integration, deployment pipelines, and quality assurance practices.</p>
+                                
+                                <div class="article-topics">
+                                    <span class="topic">Unit Testing</span>
+                                    <span class="topic">Integration</span>
+                                    <span class="topic">CI/CD Pipelines</span>
+                                    <span class="topic">Quality Gates</span>
+                                </div>
+                            </div>
+                            
+                            <div class="article-footer">
+                                <span class="coming-soon-badge">
+                                    <i class="fas fa-calendar-alt"></i> Coming Soon
+                                </span>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="category-section">
+                    <h2><i class="fas fa-shield-alt"></i> Security & Cryptography</h2>
+                    <p class="category-description">Modern cryptography, security protocols, and defensive programming practices for secure systems.</p>
+                    
+                    <div class="articles-list">
+                        <article class="article-card coming-soon">
+                            <div class="article-header">
+                                <div class="article-meta">
+                                    <span class="difficulty advanced">Advanced</span>
+                                    <span class="reading-time"><i class="fas fa-clock"></i> 30 min</span>
+                                    <span class="status">Coming Soon</span>
+                                </div>
+                            </div>
+                            
+                            <div class="article-content">
+                                <h3>Modern Cryptographic Algorithms</h3>
+                                <p>In-depth exploration of AES, RSA, elliptic curve cryptography, and post-quantum cryptographic algorithms.</p>
+                                
+                                <div class="article-topics">
+                                    <span class="topic">AES</span>
+                                    <span class="topic">RSA</span>
+                                    <span class="topic">Elliptic Curves</span>
+                                    <span class="topic">Post-Quantum</span>
+                                </div>
+                            </div>
+                            
+                            <div class="article-footer">
+                                <span class="coming-soon-badge">
+                                    <i class="fas fa-calendar-alt"></i> Coming Soon
+                                </span>
+                            </div>
+                        </article>
+
+                        <article class="article-card coming-soon">
+                            <div class="article-header">
+                                <div class="article-meta">
+                                    <span class="difficulty intermediate">Intermediate</span>
+                                    <span class="reading-time"><i class="fas fa-clock"></i> 25 min</span>
+                                    <span class="status">Coming Soon</span>
+                                </div>
+                            </div>
+                            
+                            <div class="article-content">
+                                <h3>Network Security Protocols</h3>
+                                <p>Understanding TLS/SSL, certificate management, VPNs, and secure communication protocols in modern networks.</p>
+                                
+                                <div class="article-topics">
+                                    <span class="topic">TLS/SSL</span>
+                                    <span class="topic">Certificates</span>
+                                    <span class="topic">VPN</span>
+                                    <span class="topic">PKI</span>
+                                </div>
+                            </div>
+                            
+                            <div class="article-footer">
+                                <span class="coming-soon-badge">
+                                    <i class="fas fa-calendar-alt"></i> Coming Soon
+                                </span>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+
+            <div class="newsletter-signup">
+                <div class="newsletter-content">
+                    <h3>Stay Updated</h3>
+                    <p>Get notified when new engineering articles are published. We're adding new content every week!</p>
+                    
+                    <div class="signup-form">
+                        <input type="email" placeholder="Enter your email address" id="newsletter-email">
+                        <button type="button" class="signup-btn" onclick="subscribeNewsletter()">
+                            <i class="fas fa-bell"></i> Notify Me
+                        </button>
+                    </div>
+                    
+                    <p class="newsletter-note">No spam, just quality engineering content. Unsubscribe anytime.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Newsletter subscription (placeholder functionality)
+        function subscribeNewsletter() {
+            const email = document.getElementById('newsletter-email');
+            const btn = document.querySelector('.signup-btn');
+            
+            if (!email.value || !email.value.includes('@')) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            
+            btn.innerHTML = '<i class="fas fa-check"></i> Subscribed!';
+            btn.style.background = '#10b981';
+            btn.disabled = true;
+            
+            // In a real implementation, you would send this to your backend
+            console.log('Newsletter subscription for:', email.value);
+            
+            setTimeout(() => {
+                email.value = '';
+                btn.innerHTML = '<i class="fas fa-bell"></i> Notify Me';
+                btn.style.background = '';
+                btn.disabled = false;
+            }, 3000);
+        }
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all article cards
+        document.querySelectorAll('.article-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+
+    <style>
+        /* Articles Index Specific Styles */
+        .articles-intro {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 50px;
+            text-align: center;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+        }
+
+        .intro-content h2 {
+            color: #1f2937;
+            margin-bottom: 20px;
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+
+        .intro-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .intro-stats .stat {
+            text-align: center;
+        }
+
+        .intro-stats .number {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #667eea;
+            line-height: 1;
+        }
+
+        .intro-stats .label {
+            display: block;
+            font-size: 14px;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 8px;
+            font-weight: 600;
+        }
+
+        .articles-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+        }
+
+        .category-section {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            padding: 40px;
+            border: 1px solid rgba(102, 126, 234, 0.1);
+            backdrop-filter: blur(20px);
+        }
+
+        .category-section h2 {
+            color: #1f2937;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .category-section h2 i {
+            color: #667eea;
+        }
+
+        .category-description {
+            color: #6b7280;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .articles-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+        }
+
+        .article-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1);
+            border-color: #667eea;
+        }
+
+        .article-card.featured {
+            border: 2px solid #667eea;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+        }
+
+        .article-card.featured::before {
+            content: "NEW";
+            position: absolute;
+            top: -1px;
+            right: -1px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 6px 15px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            border-bottom-left-radius: 8px;
+        }
+
+        .article-card.coming-soon {
+            opacity: 0.7;
+            background: #f8f9fa;
+        }
+
+        .article-header {
+            margin-bottom: 20px;
+        }
+
+        .article-card .article-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .article-card .difficulty,
+        .reading-time,
+        .publish-date,
+        .status {
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .reading-time {
+            background: #f3f4f6;
+            color: #6b7280;
+        }
+
+        .publish-date {
+            background: #ede9fe;
+            color: #7c3aed;
+        }
+
+        .status {
+            background: #fef3c7;
+            color: #d97706;
+        }
+
+        .article-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .article-content h3 a {
+            color: #1f2937;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .article-content h3 a:hover {
+            color: #667eea;
+        }
+
+        .article-content p {
+            color: #6b7280;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .article-topics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .topic {
+            background: #e0e7ff;
+            color: #4338ca;
+            font-size: 11px;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .article-footer {
+            border-top: 1px solid #f3f4f6;
+            padding-top: 20px;
+        }
+
+        .read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .read-more:hover {
+            color: #4f46e5;
+            transform: translateX(3px);
+        }
+
+        .coming-soon-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #d97706;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .newsletter-signup {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            padding: 50px;
+            text-align: center;
+            color: white;
+            margin-top: 60px;
+        }
+
+        .newsletter-content h3 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .newsletter-content p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .signup-form {
+            display: flex;
+            gap: 15px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .signup-form input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #1f2937;
+        }
+
+        .signup-form input::placeholder {
+            color: #6b7280;
+        }
+
+        .signup-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+        }
+
+        .signup-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .newsletter-note {
+            font-size: 14px;
+            opacity: 0.7;
+            margin-top: 15px;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .articles-intro {
+                padding: 30px 20px;
+            }
+
+            .intro-content h2 {
+                font-size: 1.8rem;
+            }
+
+            .intro-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .category-section {
+                padding: 25px 20px;
+            }
+
+            .articles-list {
+                grid-template-columns: 1fr;
+            }
+
+            .article-card {
+                padding: 20px;
+            }
+
+            .newsletter-signup {
+                padding: 30px 20px;
+            }
+
+            .signup-form {
+                flex-direction: column;
+                max-width: none;
+            }
+
+            .newsletter-content h3 {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .intro-stats .number {
+                font-size: 2rem;
+            }
+
+            .article-card .article-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            .article-topics {
+                gap: 6px;
+            }
+
+            .topic {
+                font-size: 10px;
+                padding: 3px 8px;
+            }
+        }
+    </style>
+</body>
+</html>

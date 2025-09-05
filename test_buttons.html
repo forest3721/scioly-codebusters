@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        button { margin: 10px; padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        .result { margin: 10px 0; padding: 10px; background: #f8f9fa; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Button Functionality Test</h1>
+    <p>This is a simple test page to verify JavaScript functionality works locally.</p>
+    
+    <button id="test-btn-1">Test Button 1</button>
+    <button id="test-btn-2">Test Button 2</button>
+    <button id="test-btn-3">Test Button 3</button>
+    
+    <div id="result" class="result">Click buttons above to test...</div>
+    
+    <script>
+        // Simple test to verify JavaScript is working
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded - JavaScript is working!');
+            
+            document.getElementById('test-btn-1').addEventListener('click', function() {
+                document.getElementById('result').innerHTML = '✅ Button 1 clicked successfully!';
+                console.log('Button 1 clicked');
+            });
+            
+            document.getElementById('test-btn-2').addEventListener('click', function() {
+                document.getElementById('result').innerHTML = '✅ Button 2 clicked successfully!';
+                console.log('Button 2 clicked');
+            });
+            
+            document.getElementById('test-btn-3').addEventListener('click', function() {
+                document.getElementById('result').innerHTML = '✅ Button 3 clicked successfully!';
+                console.log('Button 3 clicked');
+            });
+            
+            // Test if all elements exist
+            const btn1 = document.getElementById('test-btn-1');
+            const btn2 = document.getElementById('test-btn-2'); 
+            const btn3 = document.getElementById('test-btn-3');
+            const result = document.getElementById('result');
+            
+            if (btn1 && btn2 && btn3 && result) {
+                console.log('✅ All elements found successfully');
+            } else {
+                console.error('❌ Some elements not found');
+            }
+        });
+    </script>
+</body>
+</html>

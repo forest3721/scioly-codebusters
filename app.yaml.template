@@ -1,0 +1,21 @@
+runtime: python311
+entrypoint: gunicorn -b :$PORT main:app
+
+handlers:
+  - url: /static
+    static_dir: static
+
+  - url: /.*
+    script: auto
+
+env_variables:
+  PYTHON_ENV: production
+  GOOGLE_CLIENT_ID: "your-google-client-id-here"
+  GOOGLE_CLIENT_SECRET: "your-google-client-secret-here"
+  DB_USER: "your-db-user"
+  DB_PASS: "your-db-password"
+  DB_NAME: "your-db-name"
+  DB_HOST: "/cloudsql/your-project:region:instance"
+
+beta_settings:
+  cloud_sql_instances: your-project:region:instance

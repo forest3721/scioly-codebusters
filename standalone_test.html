@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scioly Code Breaker - Standalone Test</title>
+    <style>
+        /* Embedded CSS - copy of key styles from styles.css */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #667eea;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .action-btn-group {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .action-btn {
+            padding: 15px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .action-btn.hint {
+            background: linear-gradient(135deg, #ed8936 0%, #dd6b20 100%);
+            color: white;
+        }
+        
+        .action-btn.info {
+            background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+            color: white;
+        }
+        
+        .action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .result-area {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 2px solid #e9ecef;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+        
+        .modal-content {
+            background-color: white;
+            margin: 15% auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 500px;
+            position: relative;
+        }
+        
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            position: absolute;
+            right: 15px;
+            top: 10px;
+        }
+        
+        .close:hover {
+            color: black;
+        }
+        
+        .test-section {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        
+        .status {
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+        .info { background: #d1ecf1; color: #0c5460; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔧 Scioly Code Breaker - Button Test</h1>
+        
+        <div class="test-section">
+            <h3>Button Functionality Test</h3>
+            <p>This standalone page tests if the buttons work without any server dependencies.</p>
+        </div>
+        
+        <div class="action-btn-group">
+            <button id="get-hint-btn" class="action-btn hint">
+                <i class="fas fa-lightbulb"></i> Get Hint
+            </button>
+            <button id="cipher-intro-btn" class="action-btn info">
+                <i class="fas fa-info-circle"></i> About this Cipher
+            </button>
+            <button id="freq-letters-btn" class="action-btn info">
+                <i class="fas fa-font"></i> Most Frequent Letters
+            </button>
+        </div>
+        
+        <div class="result-area">
+            <h4>Test Results:</h4>
+            <div id="test-results">Click buttons above to test functionality...</div>
+        </div>
+        
+        <div class="test-section">
+            <h4>Debug Information:</h4>
+            <div id="debug-info">Loading...</div>
+        </div>
+    </div>
+    
+    <!-- Modals -->
+    <div id="cipher-intro-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="cipher-intro-close">&times;</span>
+            <h2 id="cipher-intro-title">Test Cipher</h2>
+            <p id="cipher-intro-body">This is a test modal to verify modal functionality works.</p>
+        </div>
+    </div>
+    
+    <div id="freq-letters-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="freq-letters-close">&times;</span>
+            <h2>Most Frequent Letters in English</h2>
+            <p style="font-size:1.2em;letter-spacing:2px;">etaoinshrdlucmfwypvbgkjqxz</p>
+            <p style="font-size:0.95em;">(from most to least frequent, not case sensitive)</p>
+        </div>
+    </div>
+    
+    <script>
+        // Embedded JavaScript for testing
+        console.log('🚀 Standalone test page loaded');
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('✅ DOM loaded');
+            
+            const debugInfo = document.getElementById('debug-info');
+            const testResults = document.getElementById('test-results');
+            
+            // Debug information
+            let debugHTML = '<div class="status info">';
+            debugHTML += `<strong>Browser:</strong> ${navigator.userAgent}<br>`;
+            debugHTML += `<strong>Time:</strong> ${new Date().toLocaleString()}<br>`;
+            debugHTML += `<strong>URL:</strong> ${window.location.href}<br>`;
+            debugHTML += '</div>';
+            
+            debugInfo.innerHTML = debugHTML;
+            
+            // Test if all elements exist
+            const hintBtn = document.getElementById('get-hint-btn');
+            const cipherBtn = document.getElementById('cipher-intro-btn');
+            const freqBtn = document.getElementById('freq-letters-btn');
+            const cipherModal = document.getElementById('cipher-intro-modal');
+            const freqModal = document.getElementById('freq-letters-modal');
+            
+            let elementsFound = 0;
+            const requiredElements = ['get-hint-btn', 'cipher-intro-btn', 'freq-letters-btn', 'cipher-intro-modal', 'freq-letters-modal'];
+            
+            requiredElements.forEach(id => {
+                if (document.getElementById(id)) {
+                    elementsFound++;
+                    console.log(`✅ Element found: ${id}`);
+                } else {
+                    console.error(`❌ Element missing: ${id}`);
+                }
+            });
+            
+            testResults.innerHTML = `<div class="${elementsFound === requiredElements.length ? 'status success' : 'status error'}">Elements found: ${elementsFound}/${requiredElements.length}</div>`;
+            
+            // Set up event listeners
+            if (hintBtn) {
+                hintBtn.addEventListener('click', function() {
+                    console.log('💡 Hint button clicked');
+                    testResults.innerHTML = '<div class="status success">✅ Hint button clicked successfully!</div>';
+                });
+            }
+            
+            if (cipherBtn) {
+                cipherBtn.addEventListener('click', function() {
+                    console.log('ℹ️ Cipher info button clicked');
+                    testResults.innerHTML = '<div class="status success">✅ Cipher info button clicked!</div>';
+                    if (cipherModal) {
+                        cipherModal.style.display = 'block';
+                    }
+                });
+            }
+            
+            if (freqBtn) {
+                freqBtn.addEventListener('click', function() {
+                    console.log('📊 Frequent letters button clicked');
+                    testResults.innerHTML = '<div class="status success">✅ Frequent letters button clicked!</div>';
+                    if (freqModal) {
+                        freqModal.style.display = 'block';
+                    }
+                });
+            }
+            
+            // Modal close functionality
+            const closeButtons = document.querySelectorAll('.close');
+            closeButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    console.log('🚪 Modal closed');
+                    document.querySelectorAll('.modal').forEach(modal => {
+                        modal.style.display = 'none';
+                    });
+                });
+            });
+            
+            // Click outside to close modals
+            window.addEventListener('click', function(event) {
+                if (event.target.classList.contains('modal')) {
+                    event.target.style.display = 'none';
+                }
+            });
+            
+            console.log('🎯 All event listeners set up');
+        });
+    </script>
+</body>
+</html>

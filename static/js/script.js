@@ -1019,13 +1019,20 @@ CodeBreakerApp.prototype.switchTutorial = function(tutorialName) {
         lesson.classList.remove('active');
     });
     
-    if (tutorialName === 'caesar') {
-        document.getElementById('caesar-tutorial').classList.add('active');
-    } else if (tutorialName === 'baconian') {
-        document.getElementById('baconian-tutorial').classList.add('active');
-    } else {
-        // Show coming soon for other tutorials
-        document.getElementById('coming-soon').classList.add('active');
+    // Get the specific tutorial lesson element
+    const targetLessonElement = document.getElementById(`${tutorialName}-tutorial`);
+    if (targetLessonElement) {
+        targetLessonElement.classList.add('active');
+    }
+
+    // Explicitly manage the visibility of the 'coming-soon' div
+    const comingSoonDiv = document.getElementById('coming-soon');
+    if (comingSoonDiv) {
+        if (targetLessonElement && targetLessonElement.id !== 'coming-soon') { // If a specific tutorial is active
+            comingSoonDiv.style.display = 'none';
+        } else { // If no specific tutorial is active, or if 'coming-soon' itself was clicked (though it shouldn't be a button)
+            comingSoonDiv.style.display = 'block';
+        }
     }
 };
 

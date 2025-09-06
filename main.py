@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify, session, redirect, url_for
+from flask import Flask, render_template, request, jsonify, session, redirect, url_for, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
 from oauthlib.oauth2 import WebApplicationClient
@@ -334,6 +334,14 @@ def get_leaderboard():
 @app.route('/robots.txt')
 def robots_txt():
     return app.send_static_file('robots.txt')
+
+@app.route('/articles/')
+def articles_index():
+    return send_from_directory('articles', 'index.html')
+
+@app.route('/articles/<path:filename>')
+def serve_article(filename):
+    return send_from_directory('articles', filename)
 
 @app.route('/sitemap.xml')
 def sitemap_xml():

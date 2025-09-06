@@ -190,6 +190,10 @@
     margin-bottom: 50px;
 }
 
+.article-content-main section {
+    margin-bottom: 30px; /* Add spacing between sections */
+}
+
 .content-section h2 {
     font-size: 2rem;
     color: #1f2937;

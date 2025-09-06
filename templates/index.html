@@ -201,145 +201,147 @@
 
             <!-- Practice Tab Content -->
             <section class="tab-content active" id="practice-tab" role="tabpanel" aria-labelledby="practice-tab-label">
-                <div class="cipher-selection">
-                <h2 id="practice-tab-label">Science Olympiad CodeBusters 2025 Cipher Practice</h2>
-                <p class="cipher-intro">Practice all cipher types from the official Science Olympiad CodeBusters 2025-2026 season rules. Interactive tools for Division B/C competition preparation:</p>
-                <div class="cipher-grid">
-                    <button class="cipher-btn active" data-cipher="caesar">
-                        <i class="fas fa-exchange-alt"></i>
-                        <span>Caesar Cipher</span>
-                        <small>Shift cipher - perfect for beginners</small>
-                    </button>
-                    <button class="cipher-btn" data-cipher="atbash">
-                        <i class="fas fa-arrows-alt-h"></i>
-                        <span>Atbash Cipher</span>
-                        <small>Reverse alphabet substitution</small>
-                    </button>
-                    <button class="cipher-btn" data-cipher="keyword">
-                        <i class="fas fa-key"></i>
-                        <span>Keyword Cipher</span>
-                        <small>Substitution with keyword alphabet</small>
-                    </button>
-                    <button class="cipher-btn" data-cipher="vigenere">
-                        <i class="fas fa-table"></i>
-                        <span>Vigenère Cipher</span>
-                        <small>Polyalphabetic keyword encryption</small>
-                    </button>
-                    <button class="cipher-btn" data-cipher="morse">
-                        <i class="fas fa-dot-circle"></i>
-                        <span>Morse Code</span>
-                        <small>Dots and dashes communication</small>
-                    </button>
-                    <button class="cipher-btn" data-cipher="binary">
-                        <i class="fas fa-code"></i>
-                        <span>Binary Code</span>
-                        <small>8-bit ASCII computer encoding</small>
-                    </button>
-                    <button class="cipher-btn" data-cipher="aristocrats">
-                        <i class="fas fa-user-secret"></i>
-                        <span>Aristocrats</span>
-                        <small>Monoalphabetic substitution puzzles</small>
-                    </button>
-                    <button class="cipher-btn" data-cipher="affine">
-                        <i class="fas fa-divide"></i>
-                        <span>Affine Cipher</span>
-                        <small>Mathematical linear transformation</small>
-                    </button>
-                    <button class="cipher-btn" data-cipher="baconian">
-                        <i class="fas fa-file-code"></i>
-                        <span>Baconian Cipher</span>
-                        <small>Binary steganographic encoding</small>
-                    </button>
-                    <button class="cipher-btn" data-cipher="polybius">
-                        <i class="fas fa-th"></i>
-                        <span>Polybius Square</span>
-                        <small>Grid-based coordinate cipher</small>
-                    </button>
-                </div>
-            </div>
-
-            <div class="practice-area">
-                <div class="cipher-info">
-                    <h3 id="cipher-name">Caesar Cipher</h3>
-                    <p id="cipher-description">Shift each letter by a fixed number of positions in the alphabet.</p>
-                </div>
-
-                <div class="cipher-controls">
-                    <div class="control-group">
-                        <label for="difficulty">Difficulty:</label>
-                        <select id="difficulty">
-                            <option value="easy">Easy (3-5 letters)</option>
-                            <option value="medium" selected>Medium (6-10 letters)</option>
-                            <option value="hard">Hard (11-15 letters)</option>
-                            <option value="expert">Expert (Full sentences)</option>
-                        </select>
-                    </div>
-                    <button id="generate-btn" class="generate-btn">
-                        <i class="fas fa-random"></i> Generate New Code
-                    </button>
-                </div>
-
-                <div class="code-display">
-                    <h4>Encoded Message:</h4>
-                    <div class="encoded-text" id="encoded-text">
-                        Click "Generate New Code" to start!
-                    </div>
-                </div>
-
-                <div class="decode-section">
-                    <h4>Your Decoded Answer:</h4>
-                    <div class="input-group">
-                        <input type="text" id="decoded-input" placeholder="Enter your decoded text here..." maxlength="50">
-                        <button id="check-btn" class="check-btn">
-                            <i class="fas fa-check"></i> Check Answer
+                <div class="practice-section">
+                    <div class="cipher-selection">
+                    <h2 id="practice-tab-label">Science Olympiad CodeBusters 2025 Cipher Practice</h2>
+                    <p class="cipher-intro">Practice all cipher types from the official Science Olympiad CodeBusters 2025-2026 season rules. Interactive tools for Division B/C competition preparation:</p>
+                    <div class="cipher-grid">
+                        <button class="cipher-btn active" data-cipher="caesar">
+                            <i class="fas fa-exchange-alt"></i>
+                            <span>Caesar Cipher</span>
+                            <small>Shift cipher - perfect for beginners</small>
                         </button>
-                    </div>
-                    <div class="action-btn-group">
-                        <button id="get-hint-btn" class="action-btn hint">
-                            <i class="fas fa-lightbulb"></i> Get Hint
+                        <button class="cipher-btn" data-cipher="atbash">
+                            <i class="fas fa-arrows-alt-h"></i>
+                            <span>Atbash Cipher</span>
+                            <small>Reverse alphabet substitution</small>
                         </button>
-                        <button id="cipher-intro-btn" class="action-btn info">
-                            <i class="fas fa-info-circle"></i> About this Cipher
+                        <button class="cipher-btn" data-cipher="keyword">
+                            <i class="fas fa-key"></i>
+                            <span>Keyword Cipher</span>
+                            <small>Substitution with keyword alphabet</small>
                         </button>
-                        <button id="freq-letters-btn" class="action-btn info">
-                            <i class="fas fa-font"></i> Most Frequent Letters
+                        <button class="cipher-btn" data-cipher="vigenere">
+                            <i class="fas fa-table"></i>
+                            <span>Vigenère Cipher</span>
+                            <small>Polyalphabetic keyword encryption</small>
+                        </button>
+                        <button class="cipher-btn" data-cipher="morse">
+                            <i class="fas fa-dot-circle"></i>
+                            <span>Morse Code</span>
+                            <small>Dots and dashes communication</small>
+                        </button>
+                        <button class="cipher-btn" data-cipher="binary">
+                            <i class="fas fa-code"></i>
+                            <span>Binary Code</span>
+                            <small>8-bit ASCII computer encoding</small>
+                        </button>
+                        <button class="cipher-btn" data-cipher="aristocrats">
+                            <i class="fas fa-user-secret"></i>
+                            <span>Aristocrats</span>
+                            <small>Monoalphabetic substitution puzzles</small>
+                        </button>
+                        <button class="cipher-btn" data-cipher="affine">
+                            <i class="fas fa-divide"></i>
+                            <span>Affine Cipher</span>
+                            <small>Mathematical linear transformation</small>
+                        </button>
+                        <button class="cipher-btn" data-cipher="baconian">
+                            <i class="fas fa-file-code"></i>
+                            <span>Baconian Cipher</span>
+                            <small>Binary steganographic encoding</small>
+                        </button>
+                        <button class="cipher-btn" data-cipher="polybius">
+                            <i class="fas fa-th"></i>
+                            <span>Polybius Square</span>
+                            <small>Grid-based coordinate cipher</small>
                         </button>
                     </div>
                 </div>
 
-                <div class="result" id="result">
-                    <!-- Result will be displayed here -->
+                <div class="practice-area">
+                    <div class="cipher-info">
+                        <h3 id="cipher-name">Caesar Cipher</h3>
+                        <p id="cipher-description">Shift each letter by a fixed number of positions in the alphabet.</p>
+                    </div>
+
+                    <div class="cipher-controls">
+                        <div class="control-group">
+                            <label for="difficulty">Difficulty:</label>
+                            <select id="difficulty">
+                                <option value="easy">Easy (3-5 letters)</option>
+                                <option value="medium" selected>Medium (6-10 letters)</option>
+                                <option value="hard">Hard (11-15 letters)</option>
+                                <option value="expert">Expert (Full sentences)</option>
+                            </select>
+                        </div>
+                        <button id="generate-btn" class="generate-btn">
+                            <i class="fas fa-random"></i> Generate New Code
+                        </button>
+                    </div>
+
+                    <div class="code-display">
+                        <h4>Encoded Message:</h4>
+                        <div class="encoded-text" id="encoded-text">
+                            Click "Generate New Code" to start!
+                        </div>
+                    </div>
+
+                    <div class="decode-section">
+                        <h4>Your Decoded Answer:</h4>
+                        <div class="input-group">
+                            <input type="text" id="decoded-input" placeholder="Enter your decoded text here..." maxlength="50">
+                            <button id="check-btn" class="check-btn">
+                                <i class="fas fa-check"></i> Check Answer
+                            </button>
+                        </div>
+                        <div class="action-btn-group">
+                            <button id="get-hint-btn" class="action-btn hint">
+                                <i class="fas fa-lightbulb"></i> Get Hint
+                            </button>
+                            <button id="cipher-intro-btn" class="action-btn info">
+                                <i class="fas fa-info-circle"></i> About this Cipher
+                            </button>
+                            <button id="freq-letters-btn" class="action-btn info">
+                                <i class="fas fa-font"></i> Most Frequent Letters
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="result" id="result">
+                        <!-- Result will be displayed here -->
+                    </div>
+
+                    <div class="hint-section">
+                        <div id="hint-text" class="hint-text"></div>
+                    </div>
                 </div>
 
-                <div class="hint-section">
-                    <div id="hint-text" class="hint-text"></div>
-                </div>
-            </div>
-
-            <div class="stats">
-                <div class="stat-card">
-                    <i class="fas fa-trophy"></i>
-                    <div class="stat-info">
-                        <span class="stat-number" id="correct-count">0</span>
-                        <span class="stat-label">Correct</span>
+                <div class="stats">
+                    <div class="stat-card">
+                        <i class="fas fa-trophy"></i>
+                        <div class="stat-info">
+                            <span class="stat-number" id="correct-count">0</span>
+                            <span class="stat-label">Correct</span>
+                        </div>
                     </div>
-                </div>
-                <div class="stat-card">
-                    <i class="fas fa-times-circle"></i>
-                    <div class="stat-info">
-                        <span class="stat-number" id="incorrect-count">0</span>
-                        <span class="stat-label">Incorrect</span>
+                    <div class="stat-card">
+                        <i class="fas fa-times-circle"></i>
+                        <div class="stat-info">
+                            <span class="stat-number" id="incorrect-count">0</span>
+                            <span class="stat-label">Incorrect</span>
+                        </div>
                     </div>
-                </div>
-                <div class="stat-card">
-                    <i class="fas fa-percentage"></i>
-                    <div class="stat-info">
-                        <span class="stat-number" id="accuracy">0%</span>
-                        <span class="stat-label">Accuracy</span>
+                    <div class="stat-card">
+                        <i class="fas fa-percentage"></i>
+                        <div class="stat-info">
+                            <span class="stat-number" id="accuracy">0%</span>
+                            <span class="stat-label">Accuracy</span>
+                        </div>
                     </div>
                 </div>
             </div>
-            </div>
+        </section>
 
             <!-- Tutorials Tab Content -->
             <div class="tab-content" id="tutorials-tab">

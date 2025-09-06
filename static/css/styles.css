@@ -851,6 +851,16 @@ header p {
     }
 }
 
+/* Practice Section Styles */
+.practice-section {
+    /* Match main-content styling exactly */
+    background: #faf9f6;
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 0;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
 /* Tutorial Styles */
 .tutorials-section {
     /* Match main-content styling exactly */

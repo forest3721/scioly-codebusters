@@ -2,6 +2,10 @@
 
 A comprehensive web application designed to help middle school students practice different types of ciphers for Science Olympiad competitions. This interactive tool provides hands-on experience with various encryption methods commonly used in code breaker events.
 
+## 🌐 Live Website
+
+This codebase powers the **mindsquad.team** website, providing Science Olympiad teams and students with free access to comprehensive cipher practice tools and educational resources.
+
 ## 🚀 Features
 
 ### 🎯 Multiple Cipher Types

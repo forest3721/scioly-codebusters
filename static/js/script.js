@@ -993,18 +993,48 @@ CodeBreakerApp.prototype.switchTab = function(tabName) {
     document.querySelectorAll('.tab-btn').forEach(btn => {
         btn.classList.remove('active');
     });
-    document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
+    const targetTabBtn = document.querySelector(`[data-tab="${tabName}"]`);
+    if (targetTabBtn) {
+        targetTabBtn.classList.add('active');
+    }
 
     // Update active tab content
     document.querySelectorAll('.tab-content').forEach(content => {
         content.classList.remove('active');
     });
-    document.getElementById(`${tabName}-tab`).classList.add('active');
+    const targetTabContent = document.getElementById(`${tabName}-tab`);
+    if (targetTabContent) {
+        targetTabContent.classList.add('active');
+    }
 
     // If switching to practice tab, auto-select Caesar cipher
     if (tabName === 'practice') {
         this.selectCipher('caesar');
     }
+};
+
+// Function to handle initial tab selection based on URL hash
+CodeBreakerApp.prototype.handleUrlHash = function() {
+    const hash = window.location.hash.substring(1); // Remove #
+    if (hash) {
+        // Check if the hash corresponds to a tab name
+        const tabBtn = document.querySelector(`[data-tab="${hash}"]`);
+        if (tabBtn) {
+            this.switchTab(hash);
+        } else if (hash === 'articles') { // Special handling for articles if needed
+            // This might redirect to a different page or activate a specific article tab
+            // For now, we'll just ensure the engineering tab is active if 'articles' is in hash
+            this.switchTab('engineering');
+        }
+    }
+};
+
+// Modify initializeApp to call handleUrlHash
+CodeBreakerApp.prototype.initializeApp = function() {
+    this.setupEventListeners();
+    this.updateCipherInfo();
+    this.loadStats();
+    this.handleUrlHash(); // Call new function on init
 };
 
 CodeBreakerApp.prototype.switchTutorial = function(tutorialName) {

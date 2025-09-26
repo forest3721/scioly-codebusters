@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polybius Square Cipher Tutorial - Science Olympiad Code Breaker Practice</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <!-- Header content -->
+        </header>
+
+        <div class="main-content">
+            <!-- Tab Navigation -->
+
+            <div class="tab-content active" id="tutorials-tab">
+                <div class="tutorials-section">
+                    <h2><i class="fas fa-graduation-cap"></i> Cipher 101 Tutorials</h2>
+                    <div class="tutorial-nav">
+                        <!-- Tutorial Nav -->
+                    </div>
+
+                    <div class="tutorial-content">
+                        <div class="tutorial-lesson active" id="polybius-tutorial">
+                            <div class="lesson-header">
+                                <h3><i class="fas fa-th"></i> Polybius Square Cipher Tutorial</h3>
+                                <div class="lesson-meta">
+                                    <span class="difficulty beginner">Beginner</span>
+                                    <span class="duration">20 minutes</span>
+                                </div>
+                            </div>
+
+                            <div class="lesson-content">
+                                <section class="lesson-section">
+                                    <h4>What is a Polybius Square?</h4>
+                                    <p>The Polybius Square is a table that allows one to translate letters into numbers. It was originally invented by the ancient Greek historian Polybius. The most common form is a 5x5 grid, where each letter of the alphabet is placed (I and J are usually combined to fit the 25 squares).</p>
+                                </section>
+
+                                <section class="lesson-section">
+                                    <h4>How it Works</h4>
+                                    <p>Each letter is represented by its coordinates in the grid. For example, in the standard 5x5 grid, 'A' would be '11', 'B' would be '12', and so on.</p>
+                                    <div class="cipher-demo">
+                                        <h5>Standard 5x5 Polybius Square:</h5>
+                                        <table class="polybius-square">
+                                            <tr><th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+                                            <tr><th>1</th><td>A</td><td>B</td><td>C</td><td>D</td><td>E</td></tr>
+                                            <tr><th>2</th><td>F</td><td>G</td><td>H</td><td>I/J</td><td>K</td></tr>
+                                            <tr><th>3</th><td>L</td><td>M</td><td>N</td><td>O</td><td>P</td></tr>
+                                            <tr><th>4</th><td>Q</td><td>R</td><td>S</td><td>T</td><td>U</td></tr>
+                                            <tr><th>5</th><td>V</td><td>W</td><td>X</td><td>Y</td><td>Z</td></tr>
+                                        </table>
+                                    </div>
+                                    <p>To encrypt "HELLO", you would find the coordinates for each letter: H=23, E=15, L=31, L=31, O=34. So "HELLO" becomes "2315313134".</p>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

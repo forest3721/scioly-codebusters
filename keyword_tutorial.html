@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyword Cipher Tutorial - Science Olympiad Code Breaker Practice</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="header-left">
+                    <h1><i class="fas fa-unlock-alt"></i> Science Olympiad Code Breaker Practice</h1>
+                    <p>Master cipher decoding and cryptography for Science Olympiad middle school competitions. Practice Caesar, Morse, and advanced codes!</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <!-- Tab Navigation -->
+            <div class="tab-navigation">
+                <button class="tab-btn" data-tab="practice">
+                    <i class="fas fa-gamepad"></i> Practice
+                </button>
+                <button class="tab-btn active" data-tab="tutorials">
+                    <i class="fas fa-graduation-cap"></i> Cipher 101
+                </button>
+            </div>
+
+            <!-- Tutorials Tab Content -->
+            <div class="tab-content active" id="tutorials-tab">
+                <div class="tutorials-section">
+                    <h2><i class="fas fa-graduation-cap"></i> Cipher 101 Tutorials</h2>
+                    <p class="tutorials-intro">Learn the fundamentals of each cipher with step-by-step tutorials designed for Science Olympiad competition success.</p>
+                    
+                    <div class="tutorial-nav">
+                        <a href="caesar_tutorial.html" class="tutorial-btn" data-tutorial="caesar">
+                            <i class="fas fa-exchange-alt"></i>
+                            <span>Caesar Cipher</span>
+                            <small>Available Now</small>
+                        </a>
+                        <a href="keyword_tutorial.html" class="tutorial-btn active" data-tutorial="keyword">
+                            <i class="fas fa-key"></i>
+                            <span>Keyword Cipher</span>
+                            <small>Available Now</small>
+                        </a>
+                        <a href="atbash_tutorial.html" class="tutorial-btn" data-tutorial="atbash">
+                            <i class="fas fa-arrows-alt-h"></i>
+                            <span>Atbash Cipher</span>
+                            <small>Available Now</small>
+                        </a>
+                        <a href="vigenere_tutorial.html" class="tutorial-btn" data-tutorial="vigenere">
+                            <i class="fas fa-table"></i>
+                            <span>Vigenère Cipher</span>
+                            <small>Available Now</small>
+                        </a>
+                        <a href="morse_tutorial.html" class="tutorial-btn" data-tutorial="morse">
+                            <i class="fas fa-dot-circle"></i>
+                            <span>Morse Code</span>
+                            <small>Available Now</small>
+                        </a>
+                        <a href="binary_tutorial.html" class="tutorial-btn" data-tutorial="binary">
+                            <i class="fas fa-calculator"></i>
+                            <span>Binary Code</span>
+                            <small>Available Now</small>
+                        </a>
+                    </div>
+
+                    <div class="tutorial-content">
+                        <!-- Keyword Cipher Tutorial -->
+                        <div class="tutorial-lesson active" id="keyword-tutorial">
+                            <div class="lesson-header">
+                                <h3><i class="fas fa-key"></i> Keyword Cipher Tutorial</h3>
+                                <div class="lesson-meta">
+                                    <span class="difficulty beginner">Beginner</span>
+                                    <span class="duration">15 minutes</span>
+                                </div>
+                            </div>
+
+                            <div class="lesson-content">
+                                <section class="lesson-section">
+                                    <h4>What is a Keyword Cipher?</h4>
+                                    <p>A Keyword Cipher is a form of monoalphabetic substitution where a keyword is used to create a "scrambled" alphabet. This scrambled alphabet is then used to encrypt a message, making it more secure than a simple Caesar cipher but still relatively easy to understand and use.</p>
+                                </section>
+
+                                <section class="lesson-section">
+                                    <h4>How to Create the Cipher Alphabet</h4>
+                                    <p>The key to this cipher is the creation of the cipher alphabet. Here's how it's done:</p>
+                                    <ol>
+                                        <li><strong>Choose a keyword.</strong> Let's use "SCIOLY" as our keyword.</li>
+                                        <li><strong>Remove duplicate letters</strong> from the keyword. "SCIOLY" has no duplicates, so we keep it as is. If the keyword was "SUMMER", it would become "SUMER".</li>
+                                        <li><strong>Write the unique keyword letters</strong> at the beginning of your cipher alphabet.</li>
+                                        <li><strong>Follow with the remaining letters of the alphabet</strong> in their usual order, skipping any letters that were in the keyword.</li>
+                                    </ol>
+
+                                    <div class="cipher-demo">
+                                        <h5>Example with Keyword "SCIOLY":</h5>
+                                        <div class="alphabet-demo">
+                                            <div class="alphabet-row">
+                                                <span class="label">Plaintext:</span>
+                                                <span class="letters">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</span>
+                                            </div>
+                                            <div class="alphabet-row">
+                                                <span class="label">Ciphertext:</span>
+                                                <span class="letters">S C I O L Y A B D E F G H J K M N P Q R T U V W X Z</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section class="lesson-section">
+                                    <h4>Encryption and Decryption</h4>
+                                    <p>Once you have your cipher alphabet, encryption is straightforward:</p>
+                                    <ul>
+                                        <li><strong>To encrypt:</strong> Find the plaintext letter in the top row (standard alphabet) and replace it with the letter directly below it in the cipher alphabet row.</li>
+                                        <li><strong>To decrypt:</strong> Find the ciphertext letter in the bottom row (cipher alphabet) and replace it with the letter directly above it in the standard alphabet row.</li>
+                                    </ul>
+
+                                    <div class="word-example">
+                                        <h5>Example: Encrypt "CODE" with keyword "SCIOLY"</h5>
+                                        <p>Using the cipher alphabet from above:</p>
+                                        <ul>
+                                            <li>C becomes I</li>
+                                            <li>O becomes N</li>
+                                            <li>D becomes O</li>
+                                            <li>E becomes L</li>
+                                        </ul>
+                                        <p>So, "CODE" encrypts to "INOL".</p>
+                                    </div>
+                                </section>
+
+                                <section class="lesson-section">
+                                    <h4>Practice Time!</h4>
+                                    <p>Try decoding this message. The keyword is "PLANET":</p>
+                                    
+                                    <div class="practice-box">
+                                        <div class="cipher-text">BIQQY</div>
+                                        <div class="practice-controls">
+                                            <input type="text" id="keyword-practice-input" placeholder="Enter your answer..." maxlength="10">
+                                            <button id="check-keyword-practice" class="practice-btn">Check Answer</button>
+                                        </div>
+                                        <div id="keyword-practice-result" class="practice-result"></div>
+                                        <div class="practice-hint" style="display: none;">
+                                            <p><strong>Hint:</strong> First, create the cipher alphabet with the keyword "PLANET". It should start "PLANETBCDFGHIJKMOQRSUVWXYZ". Now, find "B" in this cipher alphabet and see what letter is above it in the normal alphabet.</p>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section class="lesson-section">
+                                    <h4>Competition Tips</h4>
+                                    <div class="tips-grid">
+                                        <div class="tip">
+                                            <i class="fas-fa-star"></i>
+                                            <h5>Look for Common Words</h5>
+                                            <p>Even with a keyword, frequency analysis can help. "E", "T", and "A" are still the most common letters in English.</p>
+                                        </div>
+                                        <div class="tip">
+                                            <i class="fas fa-lightbulb"></i>
+                                            <h5>Guess the Keyword</h5>
+                                            <p>In competitions, keywords are often related to the theme of the event. Try guessing keywords like "SCIENCE", "OLYMPIAD", "CODE", etc.</p>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="static/js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const practiceBtn = document.getElementById('check-keyword-practice');
+            if (practiceBtn) {
+                practiceBtn.addEventListener('click', () => {
+                    const input = document.getElementById('keyword-practice-input');
+                    const result = document.getElementById('keyword-practice-result');
+                    const hint = document.querySelector('.practice-hint');
+                    
+                    if (!input || !result) return;
+
+                    const userAnswer = input.value.trim().toUpperCase();
+                    const correctAnswer = 'EARTH';
+                    
+                    result.classList.remove('correct', 'incorrect');
+                    
+                    if (userAnswer === correctAnswer) {
+                        result.textContent = '🎉 Correct! BIQQY decodes to EARTH with the keyword PLANET.';
+                        result.classList.add('correct');
+                        if (hint) hint.style.display = 'none';
+                    } else {
+                        result.textContent = '❌ Not quite right. Try again!';
+                        result.classList.add('incorrect');
+                        if (hint) hint.style.display = 'block';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

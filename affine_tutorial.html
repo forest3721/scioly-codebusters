@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affine Cipher Tutorial - Science Olympiad Code Breaker Practice</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <!-- Header content -->
+        </header>
+
+        <div class="main-content">
+            <!-- Tab Navigation -->
+
+            <div class="tab-content active" id="tutorials-tab">
+                <div class="tutorials-section">
+                    <h2><i class="fas fa-graduation-cap"></i> Cipher 101 Tutorials</h2>
+                    <div class="tutorial-nav">
+                        <!-- Tutorial Nav -->
+                    </div>
+
+                    <div class="tutorial-content">
+                        <div class="tutorial-lesson active" id="affine-tutorial">
+                            <div class="lesson-header">
+                                <h3><i class="fas fa-divide"></i> Affine Cipher Tutorial</h3>
+                                <div class="lesson-meta">
+                                    <span class="difficulty intermediate">Intermediate</span>
+                                    <span class="duration">25 minutes</span>
+                                </div>
+                            </div>
+
+                            <div class="lesson-content">
+                                <section class="lesson-section">
+                                    <h4>What is an Affine Cipher?</h4>
+                                    <p>The Affine cipher is a type of monoalphabetic substitution cipher, where each letter in an alphabet is mapped to its numeric equivalent, encrypted using a simple mathematical function, and converted back to a letter. The encryption function is `E(x) = (ax + b) mod 26`, where 'x' is the numeric equivalent of the letter, and 'a' and 'b' are the keys of the cipher.</p>
+                                </section>
+
+                                <section class="lesson-section">
+                                    <h4>The Math Behind It</h4>
+                                    <p>For the cipher to be unbreakable, 'a' must be coprime with 26. This means that the greatest common divisor of 'a' and 26 must be 1. The possible values for 'a' are 1, 3, 5, 7, 9, 11, 15, 17, 19, 21, 23, and 25. The value of 'b' can be any integer from 0 to 25.</p>
+                                    <p>To decrypt, we use the function `D(y) = a_inv * (y - b) mod 26`, where `a_inv` is the modular multiplicative inverse of 'a' modulo 26.</p>
+                                </section>
+
+                                <section class="lesson-section">
+                                    <h4>Practice Time!</h4>
+                                    <p>Let's try to encrypt the word "HELLO" with a=5 and b=8.</p>
+                                    <p>H -> 7 -> (5*7 + 8) mod 26 = 43 mod 26 = 17 -> R</p>
+                                    <p>E -> 4 -> (5*4 + 8) mod 26 = 28 mod 26 = 2 -> C</p>
+                                    <p>L -> 11 -> (5*11 + 8) mod 26 = 63 mod 26 = 11 -> L</p>
+                                    <p>L -> 11 -> (5*11 + 8) mod 26 = 63 mod 26 = 11 -> L</p>
+                                    <p>O -> 14 -> (5*14 + 8) mod 26 = 78 mod 26 = 0 -> A</p>
+                                    <p>So, "HELLO" becomes "RCLLA".</p>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

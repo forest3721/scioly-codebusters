@@ -19,7 +19,12 @@ fi
 # Set project (you'll need to replace with your project ID)
 echo "📋 Setting up Google Cloud project..."
 echo "Please enter your Google Cloud Project ID:"
-read -p "Project ID: " PROJECT_ID
+if [ -z "$GCLOUD_PROJECT_ID" ]; then
+    read -p "Project ID: " PROJECT_ID
+else
+    PROJECT_ID="$GCLOUD_PROJECT_ID"
+    echo "Using Project ID from environment variable: $PROJECT_ID"
+fi
 
 if [ -z "$PROJECT_ID" ]; then
     echo "❌ Project ID is required. Exiting."

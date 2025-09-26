@@ -343,6 +343,10 @@ def articles_index():
 def serve_article(filename):
     return send_from_directory('articles', filename)
 
+@app.route('/tutorials/<path:filename>')
+def serve_tutorial(filename):
+    return send_from_directory('tutorials', filename)
+
 @app.route('/sitemap.xml')
 def sitemap_xml():
     from flask import Response

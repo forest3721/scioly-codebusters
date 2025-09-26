@@ -3,126 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Science Olympiad Code Breaker Practice - Tutorial Test</title>
+    <title>Caesar Cipher Tutorial - Science Olympiad Code Breaker Practice</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" ../static/css/styles.css">
+    <link rel="stylesheet" href="../static/css/styles.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <div class="header-content">
-                <div class="header-left">
-                    <h1><i class="fas fa-unlock-alt"></i> Science Olympiad Code Breaker Practice</h1>
-                    <p>Master cipher decoding and cryptography for Science Olympiad middle school competitions. Practice Caesar, Morse, and advanced codes!</p>
-                </div>
-            </div>
+            <!-- Header content -->
         </header>
 
         <div class="main-content">
             <!-- Tab Navigation -->
-            <div class="tab-navigation">
-                <button class="tab-btn active" data-tab="practice">
-                    <i class="fas fa-gamepad"></i> Practice
-                </button>
-                <button class="tab-btn" data-tab="tutorials">
-                    <i class="fas fa-graduation-cap"></i> Cipher 101
-                </button>
-            </div>
 
-            <!-- Practice Tab Content -->
-            <div class="tab-content active" id="practice-tab">
-                <div class="cipher-selection">
-                    <h2>Choose Your Science Olympiad Cipher Practice</h2>
-                    <p class="cipher-intro">Select from popular Science Olympiad Code Breaker ciphers used in middle school competitions:</p>
-                    <div class="cipher-grid">
-                        <button class="cipher-btn active" data-cipher="caesar">
-                            <i class="fas fa-exchange-alt"></i>
-                            <span>Caesar Cipher</span>
-                            <small>Shift cipher - perfect for beginners</small>
-                        </button>
-                        <button class="cipher-btn" data-cipher="atbash">
-                            <i class="fas fa-arrows-alt-h"></i>
-                            <span>Atbash Cipher</span>
-                            <small>Reverse alphabet substitution</small>
-                        </button>
-                        <button class="cipher-btn" data-cipher="morse">
-                            <i class="fas fa-dot-circle"></i>
-                            <span>Morse Code</span>
-                            <small>Dots and dashes communication</small>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="practice-area">
-                    <div class="cipher-info">
-                        <h3 id="cipher-name">Caesar Cipher</h3>
-                        <p id="cipher-description">Shift each letter by a fixed number of positions in the alphabet.</p>
-                    </div>
-
-                    <div class="cipher-controls">
-                        <div class="control-group">
-                            <label for="difficulty">Difficulty:</label>
-                            <select id="difficulty">
-                                <option value="easy">Easy (3-5 letters)</option>
-                                <option value="medium" selected>Medium (6-10 letters)</option>
-                                <option value="hard">Hard (11-15 letters)</option>
-                            </select>
-                        </div>
-                        <button id="generate-btn" class="generate-btn">
-                            <i class="fas fa-random"></i> Generate New Code
-                        </button>
-                    </div>
-
-                    <div class="code-display">
-                        <h4>Encoded Message:</h4>
-                        <div class="encoded-text" id="encoded-text">
-                            Click "Generate New Code" to start!
-                        </div>
-                    </div>
-
-                    <div class="decode-section">
-                        <h4>Your Decoded Answer:</h4>
-                        <div class="input-group">
-                            <input type="text" id="decoded-input" placeholder="Enter your decoded text here..." maxlength="50">
-                            <button id="check-btn" class="check-btn">
-                                <i class="fas fa-check"></i> Check Answer
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="result" id="result">
-                        <!-- Result will be displayed here -->
-                    </div>
-                </div>
-            </div>
-
-            <!-- Tutorials Tab Content -->
-            <div class="tab-content" id="tutorials-tab">
+            <div class="tab-content active" id="tutorials-tab">
                 <div class="tutorials-section">
                     <h2><i class="fas fa-graduation-cap"></i> Cipher 101 Tutorials</h2>
-                    <p class="tutorials-intro">Learn the fundamentals of each cipher with step-by-step tutorials designed for Science Olympiad competition success.</p>
-                    
                     <div class="tutorial-nav">
-                        <button class="tutorial-btn active" data-tutorial="caesar">
-                            <i class="fas fa-exchange-alt"></i>
-                            <span>Caesar Cipher</span>
-                            <small>Available Now</small>
-                        </button>
-                        <button class="tutorial-btn disabled" data-tutorial="atbash">
-                            <i class="fas fa-arrows-alt-h"></i>
-                            <span>Atbash Cipher</span>
-                            <small>Coming Soon</small>
-                        </button>
-                        <button class="tutorial-btn disabled" data-tutorial="morse">
-                            <i class="fas fa-dot-circle"></i>
-                            <span>Morse Code</span>
-                            <small>Coming Soon</small>
-                        </button>
+                        <!-- Tutorial Nav -->
                     </div>
 
                     <div class="tutorial-content">
-                        <!-- Caesar Cipher Tutorial -->
                         <div class="tutorial-lesson active" id="caesar-tutorial">
                             <div class="lesson-header">
                                 <h3><i class="fas fa-exchange-alt"></i> Caesar Cipher Tutorial</h3>
@@ -135,91 +37,23 @@
                             <div class="lesson-content">
                                 <section class="lesson-section">
                                     <h4>What is the Caesar Cipher?</h4>
-                                    <p>The Caesar cipher is one of the simplest and most famous encryption techniques in history. Named after Julius Caesar, who used it to protect his military communications, this cipher shifts each letter in the message by a fixed number of positions in the alphabet.</p>
-                                    
-                                    <div class="example-box">
-                                        <h5>Historical Note</h5>
-                                        <p>Julius Caesar used a shift of 3 positions (A→D, B→E, C→F) to encode his messages. This made his communications secure from enemies who couldn't read Latin, let alone decoded messages!</p>
-                                    </div>
+                                    <p>The Caesar cipher is one of the simplest and most widely known encryption techniques. It is a type of substitution cipher in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet.</p>
                                 </section>
 
                                 <section class="lesson-section">
-                                    <h4>How Does It Work?</h4>
-                                    <p>The Caesar cipher uses a simple substitution method:</p>
-                                    <ol>
-                                        <li><strong>Choose a shift value</strong> (like 3, 5, or 13)</li>
-                                        <li><strong>Move each letter</strong> forward in the alphabet by that amount</li>
-                                        <li><strong>Wrap around</strong> - if you go past Z, start over at A</li>
-                                    </ol>
-
-                                    <div class="cipher-demo">
-                                        <h5>Example with Shift 3:</h5>
-                                        <div class="alphabet-demo">
-                                            <div class="alphabet-row">
-                                                <span class="label">Original:</span>
-                                                <span class="letters">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</span>
-                                            </div>
-                                            <div class="alphabet-row">
-                                                <span class="label">Shifted:</span>
-                                                <span class="letters">D E F G H I J K L M N O P Q R S T U V W X Y Z A B C</span>
-                                            </div>
-                                        </div>
-                                        <div class="word-example">
-                                            <p><strong>HELLO</strong> becomes <strong>KHOOR</strong></p>
-                                            <p>H→K, E→H, L→O, L→O, O→R</p>
-                                        </div>
-                                    </div>
+                                    <h4>How It Works</h4>
+                                    <p>For example, with a left shift of 3, D would be replaced by A, E would become B, and so on. The method is named after Julius Caesar, who used it in his private correspondence.</p>
                                 </section>
 
                                 <section class="lesson-section">
                                     <h4>Practice Time!</h4>
-                                    <p>Try decoding this Caesar cipher. The shift is 5:</p>
-                                    
-                                    <div class="practice-box">
-                                        <div class="cipher-text">HTSQI</div>
-                                        <div class="practice-controls">
-                                            <input type="text" id="practice-input" placeholder="Enter your answer..." maxlength="10">
-                                            <button id="check-practice" class="practice-btn">Check Answer</button>
-                                        </div>
-                                        <div id="practice-result" class="practice-result"></div>
-                                        <div class="practice-hint" style="display: none;">
-                                            <p><strong>Hint:</strong> Remember to shift each letter back by 5 positions. H becomes C, T becomes O...</p>
-                                        </div>
-                                    </div>
-                                </section>
-
-                                <section class="lesson-section">
-                                    <h4>Competition Tips</h4>
-                                    <div class="tips-grid">
-                                        <div class="tip">
-                                            <i class="fas fa-clock"></i>
-                                            <h5>Speed Strategy</h5>
-                                            <p>Always try ROT13 (shift 13) first - it's very common in competitions</p>
-                                        </div>
-                                        <div class="tip">
-                                            <i class="fas fa-eye"></i>
-                                            <h5>Pattern Recognition</h5>
-                                            <p>Look for single letters (A, I) and common words (THE, AND, OF)</p>
-                                        </div>
-                                        <div class="tip">
-                                            <i class="fas fa-calculator"></i>
-                                            <h5>Quick Math</h5>
-                                            <p>If A→D, that's a shift of 3. Use this to find the pattern quickly</p>
-                                        </div>
-                                        <div class="tip">
-                                            <i class="fas fa-pencil-alt"></i>
-                                            <h5>Work Smart</h5>
-                                            <p>Write out the shifted alphabet if you have time - it prevents mistakes</p>
-                                        </div>
-                                    </div>
-                                </section>
-
-                                <section class="lesson-section">
-                                    <h4>Ready to Practice?</h4>
-                                    <p>Now that you understand the Caesar cipher, head to the Practice tab to test your skills with various difficulty levels!</p>
-                                    <button class="start-practice-btn" onclick="switchTab('practice')">
-                                        <i class="fas fa-play"></i> Start Practicing Caesar Cipher
-                                    </button>
+                                    <p>Let's encrypt "HELLO" with a shift of 3.</p>
+                                    <p>H -> K</p>
+                                    <p>E -> H</p>
+                                    <p>L -> O</p>
+                                    <p>L -> O</p>
+                                    <p>O -> R</p>
+                                    <p>So, "HELLO" becomes "KHOOR".</p>
                                 </section>
                             </div>
                         </div>
@@ -228,60 +62,5 @@
             </div>
         </div>
     </div>
-
-    <script src="static/js/script.js"></script>
-    <script>
-        // Ensure tab switching works
-        function switchTab(tabName) {
-            // Update active tab button
-            document.querySelectorAll('.tab-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
-
-            // Update active tab content
-            document.querySelectorAll('.tab-content').forEach(content => {
-                content.classList.remove('active');
-            });
-            document.getElementById(`${tabName}-tab`).classList.add('active');
-        }
-
-        // Set up tab event listeners
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('.tab-btn').forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    const tabName = e.target.closest('.tab-btn').dataset.tab;
-                    switchTab(tabName);
-                });
-            });
-
-            // Tutorial practice
-            const practiceBtn = document.getElementById('check-practice');
-            if (practiceBtn) {
-                practiceBtn.addEventListener('click', () => {
-                    const input = document.getElementById('practice-input');
-                    const result = document.getElementById('practice-result');
-                    const hint = document.querySelector('.practice-hint');
-                    
-                    if (!input || !result) return;
-
-                    const userAnswer = input.value.trim().toLowerCase();
-                    const correctAnswer = 'coins';
-                    
-                    result.classList.remove('correct', 'incorrect');
-                    
-                    if (userAnswer === correctAnswer) {
-                        result.textContent = '🎉 Correct! HTSQI decodes to COINS with a shift of 5.';
-                        result.classList.add('correct');
-                        if (hint) hint.style.display = 'none';
-                    } else {
-                        result.textContent = '❌ Not quite right. Try again!';
-                        result.classList.add('incorrect');
-                        if (hint) hint.style.display = 'block';
-                    }
-                });
-            }
-        });
-    </script>
 </body>
 </html>

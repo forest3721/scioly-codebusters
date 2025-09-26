@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Binary Code Tutorial - Science Olympiad Code Breaker Practice</title>
+    <title>Vigenère Cipher Tutorial - Science Olympiad Code Breaker Practice</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../static/css/styles.css">
@@ -25,32 +25,35 @@
                     </div>
 
                     <div class="tutorial-content">
-                        <div class="tutorial-lesson active" id="binary-tutorial">
+                        <div class="tutorial-lesson active" id="vigenere-tutorial">
                             <div class="lesson-header">
-                                <h3><i class="fas fa-calculator"></i> Binary Code Tutorial</h3>
+                                <h3><i class="fas fa-table"></i> Vigenère Cipher Tutorial</h3>
                                 <div class="lesson-meta">
                                     <span class="difficulty intermediate">Intermediate</span>
-                                    <span class="duration">20 minutes</span>
+                                    <span class="duration">25 minutes</span>
                                 </div>
                             </div>
 
                             <div class="lesson-content">
                                 <section class="lesson-section">
-                                    <h4>What is Binary Code?</h4>
-                                    <p>Binary code represents text, computer processor instructions, or any other data using a two-symbol system. The two-symbol system used is often "0" and "1" from the binary number system.</p>
+                                    <h4>What is the Vigenère Cipher?</h4>
+                                    <p>The Vigenère cipher is a method of encrypting alphabetic text by using a series of interwoven Caesar ciphers, based on the letters of a keyword. It is a form of polyalphabetic substitution.</p>
                                 </section>
 
                                 <section class="lesson-section">
-                                    <h4>How It Works</h4>
-                                    <p>Each character is represented by a sequence of 8 bits (a byte). For example, the ASCII value for the letter 'A' is 65, which is represented in binary as 01000001.</p>
+                                    <h4>The Vigenère Square</h4>
+                                    <p>The Vigenère square (or tabula recta) is a 26x26 grid of alphabets, where each row is shifted one letter to the left from the previous row. This table is used to encrypt and decrypt messages.</p>
                                 </section>
 
                                 <section class="lesson-section">
-                                    <h4>Practice Time!</h4>
-                                    <p>Let's write "HI" in binary.</p>
-                                    <p>H -> 01001000</p>
-                                    <p>I -> 01001001</p>
-                                    <p>So, "HI" becomes "01001000 01001001".</p>
+                                    <h4>Encryption</h4>
+                                    <p>To encrypt a message, you repeat a keyword over the plaintext. For each letter in the plaintext, you find the intersection of the row given by the keyword letter and the column given by the plaintext letter in the Vigenère square. For example, to encrypt "HELLO" with the keyword "KEY", you would do the following:</p>
+                                    <p>H (row K) -> R</p>
+                                    <p>E (row E) -> I</p>
+                                    <p>L (row Y) -> J</p>
+                                    <p>L (row K) -> V</p>
+                                    <p>O (row E) -> S</p>
+                                    <p>So, "HELLO" becomes "RIJVS".</p>
                                 </section>
                             </div>
                         </div>
